@@ -1,0 +1,24 @@
+<h2>Login Form</h2>
+
+<form #loginForm>
+  <div class="imgcontainer">
+    <img src="assets/images/dietimage.jpeg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+      <!-- <label for="type"><b>Type</b></label>
+      <select name="type" class="typefield">
+          <option value="a">Admin</option>
+          <option value="c">Client</option>
+          <option value="d">Dietitian</option>
+        </select> -->
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit" (click)="login()">Login</button>
+  </div>
+</form>
