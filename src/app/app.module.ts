@@ -16,9 +16,15 @@ import { FormsModule } from "@angular/forms";
 import { httpInterceptorProviders } from './http-interceptors/index';
 import { HeaderComponent } from './views/partials/header/header.component';
 import { SidebarComponent } from './views/partials/sidebar/sidebar.component';
-import { NewClientComponent } from './views/new-client/new-client.component';
-import { NewDietitianComponent } from './views/new-dietitian/new-dietitian.component';
-import { DashboardRightComponent } from './views/partials/dashboard-right/dashboard-right.component';
+import { NewClientComponent } from './components/new-client/new-client.component';
+import { NewDietitianComponent } from './components/new-dietitian/new-dietitian.component';
+import { AllDetailsComponent } from './components/all-details/all-details.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { IssuesComponent } from './components/issues/issues.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { InvoicesComponent } from './components/invoices/invoices.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,13 @@ import { DashboardRightComponent } from './views/partials/dashboard-right/dashbo
     SidebarComponent,
     NewClientComponent,
     NewDietitianComponent,
-    DashboardRightComponent
+    AllDetailsComponent,
+    NotesComponent,
+    TasksComponent,
+    IssuesComponent,
+    CalendarComponent,
+    InvoicesComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,46 @@
+@import '../../../styles.scss';
+.all_details{
+    padding-top: 5%;
+    .section{
+        background-color: #d3f0d2;
+        padding: 20px;
+        margin:0 auto;
+        margin-bottom: 30px;
+        width: 73%;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        h3{
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        p{
+            font-size: 40px;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 0px;
+        }
+        a{
+            background-color: #d8ecf3;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 100%;
+            padding: 11px 0px;
+            font-weight: 400;
+        }
+        .dietitians_btn{
+            background-color: #fbe9d3;
+        }
+    }
+    .col-md-4{
+        &:nth-child(3){
+            .section{
+                background-color: transparent;
+            }
+        }
+    }
+}

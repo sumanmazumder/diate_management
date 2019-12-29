@@ -1,0 +1,32 @@
+@import '../../../../styles.scss';
+.side_bar{
+    background-color: $secondary-color;
+    height: 100%;
+    ul{
+        margin:21% 0px 0px;
+        li{
+            width: 100%;
+            
+            a{
+                padding: 7px 0px;
+                width: 100%;
+                border-bottom: 1px solid #a0c0cf;
+                text-transform: uppercase;
+                font-size: 16px;
+                text-align: center;
+                font-weight: 400;
+                width: 80%;
+                margin:0 auto;
+                display: table;
+                color: #000000;
+            }
+            &:hover{
+                background-color: #ffffff;
+            }
+            
+        }
+        .active{
+            background-color: #ffffff;
+        }
+    }
+}

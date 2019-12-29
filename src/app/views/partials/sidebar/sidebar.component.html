@@ -1,13 +1,25 @@
-<div class="side_bar">
+<div class="side_bar fixed">
   <ul>
-    <li><a routerLink="dashboardDetails" >Dashboard</a></li>
-    <li><a>Clients</a></li>
-    <li><a>Dietitians</a></li>
-    <li><a>Notes</a></li>
-    <li><a>Tasks</a></li>
-    <li><a>Issues</a></li>
-    <li><a>Calender</a></li>
-    <li><a>Invoices</a></li>
-    <li><a>Settings</a></li>
+    <li routerLinkActive="active">
+      <a routerLink="allDetails">Dashboard</a>
+    </li>
+    <li routerLinkActive="active" >
+      <a routerLink="newClients">Clients</a>
+    </li >
+    <li routerLinkActive="active">
+      <a routerLink="newDietitian">Dietitians</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="notes">Notes</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="tasks">Tasks</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="issues">Issues</a>
+    </li>
+    <li routerLinkActive="active"><a routerLink="canendar">Calender</a></li>
+    <li routerLinkActive="active"><a routerLink="invoices">Invoices</a></li>
+    <li routerLinkActive="active"><a routerLink="settings">Settings</a></li>
   </ul>
 </div>
