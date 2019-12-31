@@ -1,24 +1,40 @@
-<h2>Login Form</h2>
-
-<form #loginForm>
-  <div class="imgcontainer">
-    <img src="assets/images/dietimage.jpeg" alt="Avatar" class="avatar">
-  </div>
-
+<div class="login_services">
   <div class="container">
-      <!-- <label for="type"><b>Type</b></label>
-      <select name="type" class="typefield">
-          <option value="a">Admin</option>
-          <option value="c">Client</option>
-          <option value="d">Dietitian</option>
-        </select> -->
-
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-
-    <button type="submit" (click)="login()">Login</button>
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <h1>Login To Managment Portal</h1>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <form #loginForm>
+        <div class="form-group">
+          <label for="type"><b>Type</b></label>
+          <select name="type" class="typefield">
+            <option value="a">Admin</option>
+            <option value="c">Client</option>
+            <option value="d">Dietitian</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <!-- <label for="uname"><b>Username</b></label> -->
+          <input type="text" placeholder="Enter Username" name="email" required>
+        </div>
+        <div class="form-group">
+          <!-- <label for="psw"><b>Password</b></label> -->
+          <input type="password" placeholder="Enter Password" name="password" required>
+        </div>
+        <div class="from-group">
+          <button type="submit" (click)="login()">Login</button>
+        </div>
+      </form>
+      </div>
+    </div>
   </div>
-</form>
+
+</div>
+
+
+
+
+  <!-- <div class="imgcontainer">
+    <img src="assets/images/dietimage.jpeg" alt="Avatar" class="avatar">
+  </div> -->

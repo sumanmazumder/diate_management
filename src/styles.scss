@@ -53,6 +53,9 @@ input:focus, textarea:focus{outline: none;}
         resize: none;
     }
 }
+input:-internal-autofill-selected{
+    background-color: rgb(180, 233, 253, 1) !important;
+  }
 .mat-form-field{width:100% !important;
     .mat-form-field-infix{
         border:1px solid $gray-color;
