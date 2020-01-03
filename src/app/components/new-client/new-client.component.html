@@ -1,1 +1,198 @@
-<p>new-client works!</p>
+<!-- <p>new-client works!</p> -->
+<div class="dietetion">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center heading">
+                <h1>Add New Clients</h1>
+            </div>
+        </div>
+        <div>
+            <form action="" class="row">
+                <div class="col-md-4 form-group">
+                    <input type="text" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="text" class="form-control" placeholder="last Name">
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="text" class="form-control" placeholder="Skype Id">
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="number" class="form-control" placeholder="Phone">
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp">
+                </div>
+                <div class="col-md-3 form-group">
+                    <input type="text" class="form-control" placeholder="City">
+                </div>
+                <div class="col-md-3 form-group">
+                    <input type="text" class="form-control" placeholder="Country">
+                </div>
+                <div class="col-md-3 form-group">
+                    <textarea name="" id="" class="form-control" placeholder="Address"></textarea>
+                </div>
+                <div class="col-md-3 form-group">
+                    <input type="number" class="form-control" placeholder="Pin Code">
+                </div>
+            </form>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="medical_history">
+                    <div class="heading">
+                        <h3>Spouse</h3>
+                        <mat-slide-toggle></mat-slide-toggle>
+                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" placeholder="Anniversary">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for=""><img src="./assets/images/date-icon.svg" alt=""></label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="medical_history">
+                    <div class="heading">
+                        <h3>Referral / Source</h3>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-select [(value)]="selected">
+                                <mat-option>None</mat-option>
+                                <mat-option value="option1" selected>Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="heading">
+                        <h3>Assign / Permission</h3>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-select>
+                                <mat-option>None</mat-option>
+                                <mat-option value="option1" selected2>Option 1</mat-option>
+                                <mat-option value="option2">Option 2</mat-option>
+                                <mat-option value="option3">Option 3</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="medical_history">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="heading">
+                                    <h3><a (click)="openQualification()">
+                                        <img src="./assets/images/add-icon.svg" alt="">
+                                    </a> Qualification</h3>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="accordian_details">
+                                <h3>Title</h3>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, alias.</p>
+                                <div class="img">
+                                    <img src="./assets/images/dietimage.jpeg" class="img-fluid"/>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                        
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="medical_history">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="heading">
+                                    <h3><a (click)="openKids()">
+                                        <img src="./assets/images/add-icon.svg" alt="">
+                                    </a> Kids</h3>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="accordian_details">
+                                <p>First Name</p>
+                                <p>Last Name</p>
+                                <p>Date Of Birth</p>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="rates_history">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="heading">
+                                    <h3><a (click)="openRates()">
+                                        <img src="./assets/images/add-icon.svg" alt="">
+                                    </a>Rates</h3>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="accordian_details">
+                                <h3>Items</h3>
+                                <p>Money</p>
+                                <div class="img">
+                                    <img src="./assets/images/dietimage.jpeg" class="img-fluid"/>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="notes_history">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title class="heading">
+                                    <h3><a (click)="openNotes()">
+                                        <img src="./assets/images/add-icon.svg" alt="">
+                                    </a>Notes</h3>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="accordian_details">
+                                <h3>Title</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, quam!</p>
+                                
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-md-12 text-center save">
+                <a routerLink="../client-lists">Save</a>
+            </div>
+        </div>
+    </div>
+</div>

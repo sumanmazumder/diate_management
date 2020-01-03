@@ -6,9 +6,8 @@ form {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"], select {
   width: 100%;
-  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -16,24 +15,39 @@ input[type="password"] {
   border-radius: 3px;
   padding-left: 15px;
   height: 40px;
+  
 }
-
+.form-group{
+  margin-bottom: 40px;
+}
+label{
+  color: #c1c1c1;
+  font-weight: 600;
+  text-transform: uppercase;
+}
 .typefield{
   width: 100%;
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #0076fe;
+  border:2px solid #0076fe;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
+  padding: 11px 80px;
   cursor: pointer;
-  width: 100%;
+  border-radius: 5px;
+  display: table;
+  background-image: url("../../../../assets/images/arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 128px center;
+  background-size: 20px;
+  margin:60px auto 0px;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #ffffff;
+  color: #0076fe;
+  box-shadow: 0px 5px 25px rgba(0,11,258,0.3);
 }
 
 .imgcontainer {

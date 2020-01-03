@@ -1,0 +1,48 @@
+@import '../../../styles.scss';
+
+.dietetion{
+    padding: 60px 0px;
+    width: 100%;
+    display: inline-block;
+}
+.heading{
+    h1{
+        font-size: 34px;
+    }
+    img{
+        width: 24px;
+    }
+}
+.medical_history{
+    margin-top: 40px;
+    
+}
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3{
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+}
+.form-group{
+    img{
+        width: 24px;
+    }
+}
+.accordian_details{
+    background-color: #f9f9f9;
+    padding: 15px;
+    h3{
+        text-transform: uppercase;
+        font-size: 20px;
+
+    }
+    .img{
+        width: 100%;
+        max-height: 110px;
+        overflow: hidden;
+    }
+}

@@ -9,6 +9,8 @@ import { MDBBootstrapModule, WavesModule, ButtonsModule } from 'angular-bootstra
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 // import { MatFileUploadModule } from './angular-material-fileupload/';
 import {MatSelectModule} from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { LoginComponent } from "./views/auth/login/login.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
@@ -26,6 +28,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ErrorViewComponent } from './components/error-view/error-view.component';
+import { QualificationFormComponent } from './components/qualification-form/qualification-form.component';
+import { KidsFormComponent } from './components/kids-form/kids-form.component';
+import { RatesFormComponent } from './components/rates-form/rates-form.component';
+import { NotesFormComponent } from './components/notes-form/notes-form.component';
+import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +51,11 @@ import { ErrorViewComponent } from './components/error-view/error-view.component
     InvoicesComponent,
     SettingsComponent,
     ErrorViewComponent,
+    QualificationFormComponent,
+    KidsFormComponent,
+    RatesFormComponent,
+    NotesFormComponent,
+    ClientsListsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +66,8 @@ import { ErrorViewComponent } from './components/error-view/error-view.component
     BrowserAnimationsModule,
     // MatFileUploadModule,
     MatSelectModule,
+    MatExpansionModule,
+    MatDialogModule,
     MDBBootstrapModule.forRoot(),
   ],
   schemas: [NO_ERRORS_SCHEMA],
@@ -62,6 +76,7 @@ import { ErrorViewComponent } from './components/error-view/error-view.component
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  entryComponents: [QualificationFormComponent, KidsFormComponent, RatesFormComponent, NotesFormComponent]
 })
 export class AppModule {}

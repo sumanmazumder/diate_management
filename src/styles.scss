@@ -86,3 +86,30 @@ input:-internal-autofill-selected{
     height: 100%;
     width: 24%;
 }
+
+
+// dialog css
+.mat-dialog-title{
+    width: 100%;
+    h3{
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        font-weight: 500;
+    }
+}
+.submit{
+    background-color: $primery-color;
+    border:1px solid $primery-color;
+    padding: 5px 30px;
+    border-radius: 35px;
+    display: table;
+    margin:40px auto 0px;
+    color: #ffffff;
+    &:hover{
+        background-color: transparent;
+        box-shadow: 0px 5px 15px rgba(2,33,106,0.2);
+        color: $primery-color;
+    }
+}

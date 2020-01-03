@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialogRef} from '@angular/material/dialog';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<NotesComponent>) { }
 
   ngOnInit() {
   }
-
+  closeDialog(){
+    this.dialogRef.close();
+  }
 }

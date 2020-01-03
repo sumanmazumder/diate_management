@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-<circle cx="12.075" cy="12.025" r="11.577"/>
-<text transform="matrix(1 0 0 1 4.1216 19.1143)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="26.046">+</text>
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{enable-background:new    ;}
+	.st1{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+</style>
+<circle cx="12.1" cy="12" r="11.6"/>
+<g class="st0">
+	<path class="st1" d="M13.2,5.3v6.1h5.9v1.6h-5.9v6.2h-1.7v-6.2H5.7v-1.6h5.9V5.3H13.2z"/>
+</g>
 </svg>

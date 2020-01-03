@@ -13,17 +13,15 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GuestGuard } from './guest.guard';
-
+import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
 
 
 
 
 const routes: Routes = [
-  { path: "", redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
 
-  { path: "", redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: "", redirectTo: 'login', pathMatch: 'full' },
   { path: "login", component: LoginComponent, canActivate: [GuestGuard] },
-  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 
 
   { path: "dashboard", component: DashboardComponent, children:[
@@ -37,6 +35,8 @@ const routes: Routes = [
     { path: "canendar", component: CalendarComponent, canActivate: [AuthGuard]},
     { path: "invoices", component: InvoicesComponent, canActivate: [AuthGuard]},
     { path: "settings", component: SettingsComponent, canActivate: [AuthGuard]},
+
+    {path: "client-lists", component: ClientsListsComponent, canActivate: [AuthGuard]}
   ]},
 ];
 
