@@ -25,6 +25,7 @@ import { IssuesComponent } from './components/issues/issues.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { ErrorViewComponent } from './components/error-view/error-view.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     CalendarComponent,
     InvoicesComponent,
     SettingsComponent,
+    ErrorViewComponent,
   ],
   imports: [
     BrowserModule,

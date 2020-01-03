@@ -12,30 +12,31 @@ import { IssuesComponent } from './components/issues/issues.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { GuestGuard } from './guest.guard';
 
 
 
 
 
 const routes: Routes = [
-  // { path: "", redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: "", redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
 
   { path: "", redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: "login", component: LoginComponent },
-  // { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: "login", component: LoginComponent, canActivate: [GuestGuard] },
+  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 
 
   { path: "dashboard", component: DashboardComponent, children:[
     {path: '', redirectTo:"allDetails", pathMatch: 'full'},
-    { path: "allDetails", component: AllDetailsComponent, },
-    { path: "newClients", component: NewClientComponent, },
-    { path: "newDietitian", component: NewDietitianComponent, },
-    { path: "notes", component: NotesComponent, },
-    { path: "tasks", component: TasksComponent, },
-    { path: "issues", component: IssuesComponent, },
-    { path: "canendar", component: CalendarComponent, },
-    { path: "invoices", component: InvoicesComponent, },
-    { path: "settings", component: SettingsComponent, },
+    { path: "allDetails", component: AllDetailsComponent, canActivate: [AuthGuard] },
+    { path: "newClients", component: NewClientComponent, canActivate: [AuthGuard] },
+    { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
+    { path: "notes", component: NotesComponent, canActivate: [AuthGuard]},
+    { path: "tasks", component: TasksComponent, canActivate: [AuthGuard]},
+    { path: "issues", component: IssuesComponent, canActivate: [AuthGuard]},
+    { path: "canendar", component: CalendarComponent, canActivate: [AuthGuard]},
+    { path: "invoices", component: InvoicesComponent, canActivate: [AuthGuard]},
+    { path: "settings", component: SettingsComponent, canActivate: [AuthGuard]},
   ]},
 ];
 

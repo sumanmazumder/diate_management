@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 export interface UserInterFace{
   email?: string;
   password?: string;
+  type?:string;
 }
 
 @Component({
@@ -15,7 +16,7 @@ export interface UserInterFace{
 })
 export class LoginComponent implements OnInit {
   @ViewChild("loginForm", { static: true }) loginForm: ElementRef;
-
+  public errors:any;
   public user: UserInterFace={};
 
   constructor(
@@ -26,19 +27,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   login() {
-    // this.authService.login(this.getPayload()).subscribe(
-    //   (user: any) => {
-    //     this.authService.setUser(user.data);
-    //     this.router.navigateByUrl('/dashboard');
-    //   },
-    //   (error) => {
-    //     this.authService.setErrors(error);
-    //     // this.showNotification('error', 'Invalid Login Details');
-    //   }
-    // );
+    this.authService.login(this.getPayload()).subscribe(
+      (user: any) => {
+        this.authService.setUser(user.data);
+        this.router.navigateByUrl('/dashboard');
+      },
+      (error) => {
+        this.authService.setErrors(error);
+        this.errors = error;
+        // this.showNotification('error', 'Invalid Login Details');
+      }
+    );
   }
 
   getPayload(){
-    // return new FormData(this.loginForm.nativeElement);
+    return new FormData(this.loginForm.nativeElement);
   }
 }
