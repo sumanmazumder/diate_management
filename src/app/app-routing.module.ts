@@ -14,6 +14,7 @@ import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GuestGuard } from './guest.guard';
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
+import { ClientsViewComponent } from './components/clients-view/clients-view.component';
 
 
 
@@ -26,9 +27,10 @@ const routes: Routes = [
 
   { path: "dashboard", component: DashboardComponent, children:[
     {path: '', redirectTo:"allDetails", pathMatch: 'full'},
-    { path: "allDetails", component: AllDetailsComponent, canActivate: [AuthGuard] },
+    { path: "allDetails", component: AllDetailsComponent, canActivate: [AuthGuard],},
     { path: "newClients", component: NewClientComponent, canActivate: [AuthGuard] },
-    { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
+      { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
+    
     { path: "notes", component: NotesComponent, canActivate: [AuthGuard]},
     { path: "tasks", component: TasksComponent, canActivate: [AuthGuard]},
     { path: "issues", component: IssuesComponent, canActivate: [AuthGuard]},
@@ -36,7 +38,8 @@ const routes: Routes = [
     { path: "invoices", component: InvoicesComponent, canActivate: [AuthGuard]},
     { path: "settings", component: SettingsComponent, canActivate: [AuthGuard]},
 
-    {path: "client-lists", component: ClientsListsComponent, canActivate: [AuthGuard]}
+    {path: "client-lists", component: ClientsListsComponent, canActivate: [AuthGuard]},
+    {path: "clientDetails", component: ClientsViewComponent, canActivate: [AuthGuard]}
   ]},
 ];
 

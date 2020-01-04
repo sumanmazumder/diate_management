@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-details',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router :Router) { }
 
   ngOnInit() {
   }
+  addClient(){
+    alert("vcmm");
+    this.router.navigate(['newClients'])
+  }
+  addDietitian(){
 
+  }
 }

@@ -29,27 +29,6 @@ label{
   width: 100%;
 }
 
-button {
-  background-color: #0076fe;
-  border:2px solid #0076fe;
-  color: white;
-  padding: 11px 80px;
-  cursor: pointer;
-  border-radius: 5px;
-  display: table;
-  background-image: url("../../../../assets/images/arrow-icon.svg");
-  background-repeat: no-repeat;
-  background-position: 128px center;
-  background-size: 20px;
-  margin:60px auto 0px;
-}
-
-button:hover {
-  background-color: #ffffff;
-  color: #0076fe;
-  box-shadow: 0px 5px 25px rgba(0,11,258,0.3);
-}
-
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;

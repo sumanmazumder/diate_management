@@ -11,6 +11,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { LoginComponent } from "./views/auth/login/login.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
@@ -33,6 +34,7 @@ import { KidsFormComponent } from './components/kids-form/kids-form.component';
 import { RatesFormComponent } from './components/rates-form/rates-form.component';
 import { NotesFormComponent } from './components/notes-form/notes-form.component';
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
+import { ClientsViewComponent } from './components/clients-view/clients-view.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { ClientsListsComponent } from './components/clients-lists/clients-lists.
     RatesFormComponent,
     NotesFormComponent,
     ClientsListsComponent,
+    ClientsViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,7 @@ import { ClientsListsComponent } from './components/clients-lists/clients-lists.
     // MatFileUploadModule,
     MatSelectModule,
     MatExpansionModule,
-    MatDialogModule,
+    MatDialogModule,MatTabsModule,
     MDBBootstrapModule.forRoot(),
   ],
   schemas: [NO_ERRORS_SCHEMA],
