@@ -24,11 +24,17 @@ export class LoginComponent implements OnInit {
     private router: Router,
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // console.log(this.getPayload());
+    // console.log(this.login());
+    
+  }
 
   login() {
     this.authService.login(this.getPayload()).subscribe(
       (user: any) => {
+        console.log(user);
+        
         this.authService.setUser(user.data);
         this.router.navigateByUrl('/dashboard');
       },
