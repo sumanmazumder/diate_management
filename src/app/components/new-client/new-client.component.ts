@@ -39,6 +39,7 @@ export class NewClientComponent implements OnInit {
   public email:string;
   public password:string;
   public c_password:string;
+  public type:string;
 
 
   
@@ -75,7 +76,8 @@ newclientFormData(){
       pin: this.pin,
       email: this.email,
       password: this.password,
-      c_password: this.c_password
+      c_password: this.c_password,
+      user_type: this.type
     }
   )
 

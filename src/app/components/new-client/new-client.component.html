@@ -32,7 +32,13 @@
                 <div class="col-md-4 form-group">
                     <input type="text" class="form-control" placeholder="Country" name="country" [(ngModel)]="country" required>
                 </div>
-                
+                <div class="col-md-4 form-group">
+                    <label for="type">Type</label>
+                    <select name="type" class="typefield" [(ngModel)]="type">
+                        <option value="c">Client</option>
+                        <option value="d">Dietitian</option>
+                    </select>
+                </div>
                 <div class="col-md-4 form-group">
                     <input type="number" class="form-control" placeholder="Pin Code" name="pin" [(ngModel)]="pin" required>
                 </div>
