@@ -7,40 +7,45 @@
             </div>
         </div>
         <div>
-            <form action="" class="row">
+            <form class="row" #newClient>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="First Name">
+                    <input type="text" class="form-control" placeholder="First Name" name="first_name" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="last Name">
+                    <input type="text" class="form-control" placeholder="last Name" name="last_name" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Email" name="" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="Skype Id">
+                    <input type="text" class="form-control" placeholder="Skype Id" name="skype_id" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Phone">
+                    <input type="number" class="form-control" placeholder="Phone" name="phone" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp">
+                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp" name="alt_phone" required>
                 </div>
                 <div class="col-md-3 form-group">
-                    <input type="text" class="form-control" placeholder="City">
+                    <input type="text" class="form-control" placeholder="City" name="city" required>
                 </div>
                 <div class="col-md-3 form-group">
-                    <input type="text" class="form-control" placeholder="Country">
+                    <input type="text" class="form-control" placeholder="Country" name="country" required>
                 </div>
                 <div class="col-md-3 form-group">
-                    <textarea name="" id="" class="form-control" placeholder="Address"></textarea>
+                    <textarea name="" id="" class="form-control" placeholder="Address" name="address" required></textarea>
                 </div>
                 <div class="col-md-3 form-group">
-                    <input type="number" class="form-control" placeholder="Pin Code">
+                    <input type="number" class="form-control" placeholder="Pin Code" name="pin" required>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button (click)="newclientSubmit()" class="btn">Save</button>
                 </div>
             </form>
 
         </div>
+        <ng-template #name>
+        
         <div class="row">
             <div class="col-md-6">
                 <div class="medical_history">
@@ -194,5 +199,6 @@
                 <a routerLink="../client-lists" class="btn">Save</a>
             </div>
         </div>
+    </ng-template>
     </div>
 </div>
