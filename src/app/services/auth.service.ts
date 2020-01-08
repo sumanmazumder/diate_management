@@ -26,6 +26,7 @@ export class AuthService {
 
   public setUser(user: UserInterface) {
     console.log(user);
+    console.log(user.id);
     this.user = user;
     this.apiToken = user.token;
     store.set("apiToken", user.token);

@@ -9,9 +9,9 @@ export class NewClientService {
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
-  public clientLogin(UserDetail: FormData){
+  public addClient(UserDetail: any){
     const url = this.apiService.getUrl("register");
-    console.log(url);
+    // console.log(url);
     return this.http.post(url, UserDetail);
   }
 }

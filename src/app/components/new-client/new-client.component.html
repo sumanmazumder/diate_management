@@ -6,45 +6,56 @@
                 <h1>Add New Clients</h1>
             </div>
         </div>
-        <div>
-            <form class="row" #newClient>
+        <div #firstForm>
+            <form class="row">
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="First Name" name="first_name" required>
+                    <input type="text" class="form-control" placeholder="First Name" name="first_name" [(ngModel)]="first_name" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="last Name" name="last_name" required>
+                    <input type="text" class="form-control" placeholder="last Name" name="last_name" [(ngModel)]="last_name" required>
                 </div>
-                <div class="col-md-4 form-group">
+                <!-- <div class="col-md-4 form-group">
                     <input type="email" class="form-control" placeholder="Email" name="" required>
+                </div> -->
+                <div class="col-md-4 form-group">
+                    <input type="text" class="form-control" placeholder="Skype Id" name="skype_id" [(ngModel)]="skype_id" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="Skype Id" name="skype_id" required>
+                    <input type="number" class="form-control" placeholder="Phone" name="phone" [(ngModel)]="phone" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Phone" name="phone" required>
+                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp" name="alt_phone" [(ngModel)]="alt_phone" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp" name="alt_phone" required>
+                    <input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="city" required>
                 </div>
-                <div class="col-md-3 form-group">
-                    <input type="text" class="form-control" placeholder="City" name="city" required>
+                <div class="col-md-4 form-group">
+                    <input type="text" class="form-control" placeholder="Country" name="country" [(ngModel)]="country" required>
                 </div>
-                <div class="col-md-3 form-group">
-                    <input type="text" class="form-control" placeholder="Country" name="country" required>
+                
+                <div class="col-md-4 form-group">
+                    <input type="number" class="form-control" placeholder="Pin Code" name="pin" [(ngModel)]="pin" required>
                 </div>
-                <div class="col-md-3 form-group">
-                    <textarea name="" id="" class="form-control" placeholder="Address" name="address" required></textarea>
+                <div class="col-md-4 form-group">
+                    <input type="email" class="form-control" placeholder="email" name="email" [(ngModel)]="email" required>
                 </div>
-                <div class="col-md-3 form-group">
-                    <input type="number" class="form-control" placeholder="Pin Code" name="pin" required>
+                <div class="col-md-6 form-group">
+                    <input type="number" class="form-control" placeholder="password" name="pin" [(ngModel)]="password" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="number" class="form-control" placeholder="Confirm Password" name="pin" [(ngModel)]="c_password" required>
+                </div>
+                <div class="col-md-12 form-group">
+                    <textarea name="" id="" class="form-control" placeholder="Address" name="address" [(ngModel)]="address" required></textarea>
                 </div>
                 <div class="col-md-12 text-center">
-                    <button (click)="newclientSubmit()" class="btn">Save</button>
+                    <button (click)="newclientAdd()" class="btn">Save</button>
                 </div>
+                
             </form>
 
         </div>
-        <ng-template #name>
+        <div *ngIf="secondForm">
         
         <div class="row">
             <div class="col-md-6">
@@ -199,6 +210,6 @@
                 <a routerLink="../client-lists" class="btn">Save</a>
             </div>
         </div>
-    </ng-template>
+    </div>
     </div>
 </div>
