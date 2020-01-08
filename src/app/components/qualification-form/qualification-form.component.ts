@@ -1,30 +1,33 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {MatDialogRef} from '@angular/material/dialog';
+import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
+// import {MatDialogRef} from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QualificationService } from '../../services/qualification.service';
-// import { qualificationInterface } from '../../interfaces/qualificationInterface';
-export interface qualificationInterface{
-  // user_id?:string,
-    title?:string,
-    text?:string,
-    doc?:string
-}
+import { read } from 'fs';
+import { qualificationInterface } from '../../interfaces/qualificationInterface';
+
 @Component({
   selector: 'app-qualification-form',
   templateUrl: './qualification-form.component.html',
   styleUrls: ['./qualification-form.component.scss']
 })
 export class QualificationFormComponent implements OnInit {
-
   public user : qualificationInterface = {};
-  @ViewChild("qualyForm", {static:true}) qualificationForm:ElementRef
+  public user_id:number;
+  @ViewChild("qualyForm", {static:true}) qualificationForm:ElementRef;
+
+
+
   constructor( 
     public dialogRef: MatDialogRef<QualificationFormComponent>,
-    private qualyServices: QualificationService
+    private qualyServices: QualificationService,
+    @Inject(MAT_DIALOG_DATA) public data:any,
     ) { }
 
   ngOnInit() {
     this.getFromData();
+    this.user_id = this.data.userId;
   }
+  
   qualificationSubmit(){
     this.qualyServices.qualificationData(this.getFromData()).subscribe(
       (user:any)=>{
@@ -33,7 +36,6 @@ export class QualificationFormComponent implements OnInit {
       },
       (error)=>{
         console.log(error);
-        
       }
     )
   }
@@ -47,4 +49,17 @@ export class QualificationFormComponent implements OnInit {
     return new FormData (this.qualificationForm.nativeElement);
   }
   
+  public image: any;
+  readURL(input) {
+    console.log(input);
+    
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.readAsDataURL(input.files[0]);
+        reader.onload = (_event)=>{
+          this.image = reader.result;
+        }
+    }
+}
 }

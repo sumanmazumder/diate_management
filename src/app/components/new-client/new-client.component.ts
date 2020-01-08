@@ -7,6 +7,8 @@ import { NotesComponent } from '../notes/notes.component';
 import { NewClientService } from '../../services/new-client.service';
 import { newClientInterface } from '../../interfaces/newClientInterface';
 
+import { QualificationService } from 'src/app/services/qualification.service';
+
 // export interface newClientInterface{
 //   first_name?: string;
 //   last_name?: string;
@@ -26,6 +28,8 @@ import { newClientInterface } from '../../interfaces/newClientInterface';
 export class NewClientComponent implements OnInit {
   public firstForm : boolean = true;
   public secondForm : boolean = false;
+  public userId: number;
+
 
   public first_name:string;
   public last_name:string;
@@ -42,19 +46,23 @@ export class NewClientComponent implements OnInit {
   public type:string;
 
 
-  
   @ViewChild("newClient", {static:true}) newClientData: ElementRef;
-  constructor(public dialog: MatDialog, private newservice: NewClientService) { }
+  constructor(public dialog: MatDialog, 
+    private newservice: NewClientService,
+    private qualificationService: QualificationService
+    ) { }
 
   ngOnInit() {
     // console.log(this.newclientSubmit())
   }
   newclientAdd(){
     this.newservice.addClient(this.newclientFormData()).subscribe(
-      (suceesss:any)=>{
-        console.log(suceesss);
+      (success:any)=>{
+        console.log(success);
         this.firstForm = false;
         this.secondForm = true;
+        this.userId = success.data['user'].id;
+        console.log(this.userId);
       },
       (error)=>{
         console.log(error);
@@ -90,13 +98,20 @@ newclientFormData(){
   openQualification(){
     const dialogRef= this.dialog.open(QualificationFormComponent,{
       width: '550px',
-      data: {}
+      data: {userId: this.userId}
     });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.qualificationService.getqualification().subscribe(
+        (success:any)=>{
+          console.log(success);
+        }
+      )
+    })
   }
   openKids(){
     const dialogRef= this.dialog.open(KidsFormComponent,{
       width: '550px',
-      data: {}
+      data: {userId: this.userId}
     });
   }
   openRates(){

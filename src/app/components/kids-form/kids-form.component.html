@@ -4,24 +4,27 @@
         <h3>Add Kids</h3>
     </div>
     <mat-dialog-content>
-        <form action="">
+        <form #kidsForm>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="First Name">
+                <input type="hidden" class="form-control" placeholder="First Name" name="user_id" [value]="data.userid">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Last Name">
+                <input type="text" class="form-control" placeholder="First Name" name="first_name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Last Name" name="last_name">
             </div>
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-10">
-                        <input type="text" class="form-control" placeholder="Date of Birth">
+                        <input type="date" class="form-control" placeholder="Date of Birth" name="dob">
                     </div>
                     <div class="col-md-2">
                         <label for=""><img src="./assets/images/date-icon.svg" alt=""></label>
                     </div>
                 </div>
             </div>
-            <button (click)="closeDialog()" class="submit">Submit</button>
+            <button (click)="kidsSubmit()" class="submit">Submit</button>
         </form>
     </mat-dialog-content>
 </div>
