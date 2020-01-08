@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core'
 // import {MatDialogRef} from '@angular/material/dialog';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QualificationService } from '../../services/qualification.service';
-import { read } from 'fs';
 import { qualificationInterface } from '../../interfaces/qualificationInterface';
 
 @Component({
