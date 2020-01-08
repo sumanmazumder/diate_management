@@ -21,7 +21,7 @@ import { ClientsViewComponent } from './components/clients-view/clients-view.com
 
 const routes: Routes = [
 
-  { path: "", redirectTo: 'login', pathMatch: 'full' },
+  { path: "dashboard", redirectTo: 'login', pathMatch: 'full' },
   { path: "login", component: LoginComponent, canActivate: [GuestGuard] },
 
 
