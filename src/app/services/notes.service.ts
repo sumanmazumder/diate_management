@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class KidsService {
+export class NotesService {
 
   constructor(
     private http: HttpClient,
     private apiService: ApiService
   ) { }
-  kidsData(Data:any){
-    const url = this.apiService.getUrl("UserKid");
+
+  notesData(Data:any){
+    const url = this.apiService.getUrl("UserNote");
     return this.http.post(url, Data);
   }
-  getUserKids(){
-    const url = this.apiService.getUrl("UserKid");
-    console.log(url);
+  getNotesData(){
+    const url = this.apiService.getUrl("UserNote");
     return this.http.get(url);
   }
 }
