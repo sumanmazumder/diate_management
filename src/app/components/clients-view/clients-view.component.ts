@@ -11,5 +11,8 @@ export class ClientsViewComponent implements OnInit {
 
   ngOnInit() {
   }
+  add(){
+    
+  }
 
 }

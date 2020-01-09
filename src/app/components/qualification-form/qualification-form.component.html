@@ -16,7 +16,7 @@
                 <textarea name="" id="" class="form-control" placeholder="Text" name="text"></textarea>
             </div>
             <div class="form-group">
-                <input id="singleFile" type="file" [fileUploadInputFor]="fileUploadQueue" name="doc" (input)="readURL($event)" />
+                <input id="singleFile" type="file" name="doc" (input)="readURL($event)" />
                 <label for=""><img src="./assets/images/pdf-icon.svg" alt=""></label>
                 <img [src]="image"/>
             </div>

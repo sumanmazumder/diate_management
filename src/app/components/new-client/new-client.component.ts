@@ -30,9 +30,14 @@ import { RatesService } from '../../services/rates.service';
 })
 export class NewClientComponent implements OnInit {
   public firstForm : boolean = true;
-  public secondForm : boolean = true;
+  public secondForm : boolean = false;
   public userId: number;
-
+  public sourceData = ["Social Media",
+    "Google",
+    "Advertisement",
+    "Friends and family",
+    "Website",
+    "Other"];
 
   public first_name:string;
   public last_name:string;
@@ -59,6 +64,7 @@ export class NewClientComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    // this.userId = 21;
     // console.log(this.newclientSubmit())
   }
   newclientAdd(){
@@ -98,62 +104,4 @@ newclientFormData(){
   // alert("click");
   // return new FormData(this.newClientData.nativeElement);
 }
-
-
-
-  openQualification(){
-    const dialogRef= this.dialog.open(QualificationFormComponent,{
-      width: '550px',
-      data: {userId: this.userId}
-    });
-    dialogRef.afterClosed().subscribe(result=>{
-      this.qualificationService.getqualification().subscribe(
-        (success:any)=>{
-          console.log(success);
-        }
-      )
-    })
-  }
-  openKids(){
-    const dialogRef= this.dialog.open(KidsFormComponent,{
-      width: '550px',
-      data: {userId: this.userId}
-    });
-    dialogRef.afterClosed().subscribe(result=>{
-      this.kidsService.getUserKids().subscribe(
-        (success:any)=>{
-          console.log(success);
-          
-        }
-      )
-    })
-  }
-  openRates(){
-    const dialogRef= this.dialog.open(RatesFormComponent,{
-      width: '550px',
-      data: {}
-    });
-    dialogRef.afterClosed().subscribe(result=>{
-      this.ratesService.getRatesData().subscribe(
-        (success:any)=>{
-          console.log(success);
-          
-        }
-      )
-    })
-  }
-  openNotes(){
-    const dialogRef= this.dialog.open(NotesFormComponent,{
-      width: '550px',
-      data: {userId: this.userId}
-    });
-    dialogRef.afterClosed().subscribe(result=>{
-      this.notesService.getNotesData().subscribe(
-        (success:any)=>{
-          console.log(success);
-          
-        }
-      )
-    })
-  }
 }

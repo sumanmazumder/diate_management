@@ -35,6 +35,7 @@ import { RatesFormComponent } from './components/rates-form/rates-form.component
 import { NotesFormComponent } from './components/notes-form/notes-form.component';
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
 import { ClientsViewComponent } from './components/clients-view/clients-view.component';
+import { OtherClientDetailsComponent } from './components/new-client/other-client-details/other-client-details.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ClientsViewComponent } from './components/clients-view/clients-view.com
     NotesFormComponent,
     ClientsListsComponent,
     ClientsViewComponent,
+    OtherClientDetailsComponent,
   ],
   imports: [
     BrowserModule,

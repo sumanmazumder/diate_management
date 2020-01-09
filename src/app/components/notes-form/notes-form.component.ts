@@ -17,18 +17,16 @@ export class NotesFormComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    
+    this.data.userId
     console.log(this.data.userId);
   }
   notesSubmit(){
     this.notesServices.notesData(this.getNotesForm()).subscribe(
       (user:any)=>{
         console.log(user);
-        
       },
       (error)=>{
         console.log(error);
-        
       }
     )
   }
