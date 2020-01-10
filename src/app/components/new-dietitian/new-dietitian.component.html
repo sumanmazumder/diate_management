@@ -6,7 +6,7 @@
             </div>
         </div>
         <div>
-            <form class="row">
+            <div class="row">
                 <div class="col-md-4 form-group">
                     <input type="text" class="form-control" placeholder="First Name" name="first_name" [(ngModel)]="data.first_name" required>
                 </div>
@@ -84,15 +84,13 @@
                 </div>
                 <div class="col-md-6">
                     <select name="assign" id="" class="form-control">
-                        
                         <option [value]="source" *ngFor="let source of sourceData">{{source}}</option>
                     </select>
                 </div>
                 <div class="col-md-12 text-center">
                     <button (click)="newditationAdd()" class="btn">Save</button>
                 </div>
-                
-            </form>
+            </div>
 
         </div>
         <div *ngIf="secondForm">

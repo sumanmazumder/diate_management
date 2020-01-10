@@ -2,16 +2,21 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { MDBBootstrapModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {
+  MDBBootstrapModule,
+  WavesModule,
+  ButtonsModule
+} from "angular-bootstrap-md";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 // import { MatFileUploadModule } from './angular-material-fileupload/';
-import {MatSelectModule} from '@angular/material/select';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatSelectModule } from "@angular/material/select";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 import { LoginComponent } from "./views/auth/login/login.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
@@ -36,6 +41,7 @@ import { NotesFormComponent } from './components/notes-form/notes-form.component
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
 import { ClientsViewComponent } from './components/clients-view/clients-view.component';
 import { OtherClientDetailsComponent } from './components/new-client/other-client-details/other-client-details.component';
+
 
 @NgModule({
   declarations: [
@@ -72,16 +78,19 @@ import { OtherClientDetailsComponent } from './components/new-client/other-clien
     // MatFileUploadModule,
     MatSelectModule,
     MatExpansionModule,
-    MatDialogModule,MatTabsModule,
-    MDBBootstrapModule.forRoot(),
+    MatDialogModule,
+    MatTabsModule,
+    MatSnackBarModule,
+    MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [
-    httpInterceptorProviders
-  ],
-  bootstrap: [
-    AppComponent
-  ],
-  entryComponents: [QualificationFormComponent, KidsFormComponent, RatesFormComponent, NotesFormComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    QualificationFormComponent,
+    KidsFormComponent,
+    RatesFormComponent,
+    NotesFormComponent
+  ]
 })
 export class AppModule {}
