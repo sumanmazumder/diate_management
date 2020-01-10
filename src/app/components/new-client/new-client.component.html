@@ -33,11 +33,10 @@
                     <input type="text" class="form-control" placeholder="Country" name="country" [(ngModel)]="country" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <select name="type" class="typefield" [(ngModel)]="type" class="form-control">
-                        <!-- <option disabled selected>Type</option>
-                          <option selected value="d">Dietitian</option> -->
+                    <input type="text" disabled class="form-control" name="type" value="Client">
+                    <!-- <select name="type" class="typefield" [(ngModel)]="type" class="form-control">
                           <option value="c">Client</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col-md-4 form-group">
                     <input type="number" class="form-control" placeholder="Pin Code" name="pin" [(ngModel)]="pin" required>

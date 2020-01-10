@@ -57,7 +57,6 @@ export class NewClientComponent implements OnInit {
   public email: string;
   public password: string;
   public c_password: string;
-  public type: string;
 
   @ViewChild("newClient", { static: true }) newClientData: ElementRef;
   constructor(
@@ -102,7 +101,7 @@ export class NewClientComponent implements OnInit {
       email: this.email,
       password: this.password,
       c_password: this.c_password,
-      user_type: this.type
+      user_type: "c"
     };
 
     // alert("click");

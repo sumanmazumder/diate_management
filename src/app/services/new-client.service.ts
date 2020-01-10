@@ -14,4 +14,11 @@ export class NewClientService {
     // console.log(url);
     return this.http.post(url, UserDetail);
   }
+  getUserData(userId:any){
+    const url = this.apiService.getUrl(`userById/${userId}`);
+    console.log(url);
+    console.log(userId);
+    
+    return this.http.get(url);
+  }
 }

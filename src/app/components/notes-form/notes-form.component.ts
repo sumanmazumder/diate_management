@@ -24,6 +24,7 @@ export class NotesFormComponent implements OnInit {
     this.notesServices.notesData(this.getNotesForm()).subscribe(
       (user:any)=>{
         console.log(user);
+        this.closeDialog();
       },
       (error)=>{
         console.log(error);

@@ -29,6 +29,7 @@ export class NewDietitianComponent implements OnInit {
   public secondForm: boolean = false;
   public userId: number;
   public data: newDitiationInterface = {};
+  public userType:any = 'c';
   public sourceData = [
     "Social Media",
     "Google",

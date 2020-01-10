@@ -14,9 +14,4 @@ export class KidsService {
     const url = this.apiService.getUrl("UserKid");
     return this.http.post(url, Data);
   }
-  getUserKids(){
-    const url = this.apiService.getUrl("UserKid");
-    console.log(url);
-    return this.http.get(url);
-  }
 }

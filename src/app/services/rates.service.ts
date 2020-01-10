@@ -15,8 +15,4 @@ export class RatesService {
     const url = this.apiService.getUrl("UserRate");
     return this.http.post(url, Data);
   }
-  getRatesData(){
-    const url = this.apiService.getUrl("UserRate");
-    return this.http.get(url);
-  }
 }

@@ -10,11 +10,11 @@
                             </a> Qualification</h3>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="accordian_details">
-                        <h3>Title</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, alias.</p>
+                    <div class="accordian_details" *ngFor="let qualy of otherDetails.qualification">
+                        <h3>{{qualy.title}}</h3>
+                        <p>{{qualy.text}}</p>
                         <div class="img">
-                            <img src="./assets/images/dietimage.jpeg" class="img-fluid"/>
+                            <img [src]="qualy.doc" class="img-fluid"/>
                         </div>
                     </div>
                 </mat-expansion-panel>

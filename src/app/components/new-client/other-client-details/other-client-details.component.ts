@@ -18,7 +18,7 @@ import { RatesService } from '../../../services/rates.service';
 })
 export class OtherClientDetailsComponent implements OnInit {
   @Input("userId") userId:number;
-
+  public otherDetails:any;
   constructor(
     public dialog: MatDialog, 
     private newservice: NewClientService,
@@ -29,19 +29,30 @@ export class OtherClientDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.getOtherUserdata());
+    
   }
 
+  getOtherUserdata(){
+    this.newservice.getUserData(this.userId).subscribe(
+      (success:any)=>{
+        console.log(success);
+        this.otherDetails = success.data[0];
+        console.log(this.otherDetails);
+        console.log(this.otherDetails.qualification);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
+  }
   openQualification(){
     const dialogRef= this.dialog.open(QualificationFormComponent,{
       width: '550px',
       data: {userId: this.userId}
     });
     dialogRef.afterClosed().subscribe(result=>{
-      this.qualificationService.getqualification().subscribe(
-        (success:any)=>{
-          console.log(success);
-        }
-      )
+      this.getOtherUserdata();
     })
   }
   openKids(){
@@ -52,12 +63,7 @@ export class OtherClientDetailsComponent implements OnInit {
       data: {userId: this.userId}
     });
     dialogRef.afterClosed().subscribe(result=>{
-      this.kidsService.getUserKids().subscribe(
-        (success:any)=>{
-          console.log(success);
-          
-        }
-      )
+      this.getOtherUserdata();
     })
   }
   openRates(){
@@ -66,11 +72,7 @@ export class OtherClientDetailsComponent implements OnInit {
       data: {userId: this.userId}
     });
     dialogRef.afterClosed().subscribe(result=>{
-      this.ratesService.getRatesData().subscribe(
-        (success:any)=>{
-          console.log(success);
-        }
-      )
+      this.getOtherUserdata();
     })
   }
   openNotes(){
@@ -79,12 +81,7 @@ export class OtherClientDetailsComponent implements OnInit {
       data: {userId: this.userId}
     });
     dialogRef.afterClosed().subscribe(result=>{
-      this.notesService.getNotesData().subscribe(
-        (success:any)=>{
-          console.log(success);
-          
-        }
-      )
+      this.getOtherUserdata();
     })
   }
 }

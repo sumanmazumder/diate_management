@@ -27,6 +27,7 @@ export class KidsFormComponent implements OnInit {
     this.KidsService.kidsData(this.getKidsFormData()).subscribe(
       (user:any)=>{
         console.log(user);
+        this.closeDialog();
       },
       (error)=>{
         console.log(error);

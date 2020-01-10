@@ -15,8 +15,4 @@ export class NotesService {
     const url = this.apiService.getUrl("UserNote");
     return this.http.post(url, Data);
   }
-  getNotesData(){
-    const url = this.apiService.getUrl("UserNote");
-    return this.http.get(url);
-  }
 }
