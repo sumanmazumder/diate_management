@@ -6,19 +6,25 @@
     <mat-dialog-content>
         <form #ratesForm>
             <div class="form-group">
+                <input type="hidden" placeholder="Items" class="form-control" name="user_id" [value]="dataUserId" required/>
+            </div>
+            <div class="form-group">
                 <input type="text" placeholder="Items" class="form-control" name="item" required/>
             </div>
             <div class="form-group row">
                 <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="$$" name="price" required>
+                    <input type="text" class="form-control" placeholder="₹" name="price" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="text" name="value" required>
                 </div>
                 <div class="col-md-8">
-                    <select name="value" class="typefield" [(ngModel)]="value" class="form-control">
+                    <!-- <select name="value" class="typefield" [(ngModel)]="value" class="form-control">
                         <option>Option 1</option>
                         <option>Option 1</option>
                         <option>Option 1</option>
                         <option>Option 1</option>
-                    </select>
+                    </select> -->
                     <!-- <mat-form-field>
                         <mat-select [(ngModel)]="value">
                             <mat-option>None</mat-option>
@@ -28,10 +34,6 @@
                         </mat-select>
                     </mat-form-field> -->
                 </div>
-            </div>
-            <div class="form-group">
-                <input id="singleFile" type="file" [fileUploadInputFor]="" />
-                <label for=""><img src="./assets/images/pdf-icon.svg" alt=""></label>
             </div>
             <button (click)="rateFromSubmit()" class="submit">Submit</button>
         </form>

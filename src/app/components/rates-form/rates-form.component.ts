@@ -15,8 +15,9 @@ export class RatesFormComponent implements OnInit {
     private ratesServices: RatesService,
     @Inject(MAT_DIALOG_DATA) public data:any,
     ) { }
-
+    public dataUserId = this.data.userId;
   ngOnInit() {
+    this.dataUserId = 21;
   }
   rateFromSubmit(){
     this.ratesServices.ratesData(this.getRateFromData()).subscribe(
