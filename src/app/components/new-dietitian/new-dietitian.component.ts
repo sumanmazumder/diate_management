@@ -65,4 +65,5 @@ export class NewDietitianComponent implements OnInit {
   newclientFormData() {
     return this.data;
   }
+
 }

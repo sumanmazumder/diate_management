@@ -21,26 +21,27 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { LoginComponent } from "./views/auth/login/login.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
 import { FormsModule } from "@angular/forms";
-import { httpInterceptorProviders } from "./http-interceptors/index";
-import { HeaderComponent } from "./views/partials/header/header.component";
-import { SidebarComponent } from "./views/partials/sidebar/sidebar.component";
-import { NewClientComponent } from "./components/new-client/new-client.component";
-import { NewDietitianComponent } from "./components/new-dietitian/new-dietitian.component";
-import { AllDetailsComponent } from "./components/all-details/all-details.component";
-import { NotesComponent } from "./components/notes/notes.component";
-import { TasksComponent } from "./components/tasks/tasks.component";
-import { IssuesComponent } from "./components/issues/issues.component";
-import { CalendarComponent } from "./components/calendar/calendar.component";
-import { InvoicesComponent } from "./components/invoices/invoices.component";
-import { SettingsComponent } from "./components/settings/settings.component";
-import { ErrorViewComponent } from "./components/error-view/error-view.component";
-import { QualificationFormComponent } from "./components/qualification-form/qualification-form.component";
-import { KidsFormComponent } from "./components/kids-form/kids-form.component";
-import { RatesFormComponent } from "./components/rates-form/rates-form.component";
-import { NotesFormComponent } from "./components/notes-form/notes-form.component";
-import { ClientsListsComponent } from "./components/clients-lists/clients-lists.component";
-import { ClientsViewComponent } from "./components/clients-view/clients-view.component";
-import { OtherClientDetailsComponent } from "./components/new-client/other-client-details/other-client-details.component";
+import { httpInterceptorProviders } from './http-interceptors/index';
+import { HeaderComponent } from './views/partials/header/header.component';
+import { SidebarComponent } from './views/partials/sidebar/sidebar.component';
+import { NewClientComponent } from './components/new-client/new-client.component';
+import { NewDietitianComponent } from './components/new-dietitian/new-dietitian.component';
+import { AllDetailsComponent } from './components/all-details/all-details.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { IssuesComponent } from './components/issues/issues.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { InvoicesComponent } from './components/invoices/invoices.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { ErrorViewComponent } from './components/error-view/error-view.component';
+import { QualificationFormComponent } from './components/qualification-form/qualification-form.component';
+import { KidsFormComponent } from './components/kids-form/kids-form.component';
+import { RatesFormComponent } from './components/rates-form/rates-form.component';
+import { NotesFormComponent } from './components/notes-form/notes-form.component';
+import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
+import { ClientsViewComponent } from './components/clients-view/clients-view.component';
+import { OtherClientDetailsComponent } from './components/new-client/other-client-details/other-client-details.component';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { OtherClientDetailsComponent } from "./components/new-client/other-clien
     NotesFormComponent,
     ClientsListsComponent,
     ClientsViewComponent,
-    OtherClientDetailsComponent
+    OtherClientDetailsComponent,
   ],
   imports: [
     BrowserModule,
