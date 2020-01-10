@@ -33,8 +33,8 @@
                 </div>
                 <div class="col-md-4 form-group">
                     <select name="type" class="typefield" [(ngModel)]="data.type" class="form-control">
-                        <option disabled selected>Type</option>
-                        <option value="c">Client</option>
+                        <!-- <option disabled selected>Type</option>
+                        <option value="c">Client</option> -->
                         <option value="d">Dietitian</option>
                     </select>
                 </div>
@@ -72,9 +72,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <h3>Assign Dietitions</h3>
                 </div>
+                <div class="col-md-6">
+                  <h3>Source</h3>
+              </div>
                 <div class="col-md-6">
                     <select name="assign" id="" class="form-control">
                         <option value="1">option 1</option>
