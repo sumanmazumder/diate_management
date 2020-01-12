@@ -33,10 +33,10 @@
                             </a> Kids</h3>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="accordian_details">
-                        <p>First Name</p>
-                        <p>Last Name</p>
-                        <p>Date Of Birth</p>
+                    <div class="accordian_details" *ngFor="let kids of otherDetails.kids">
+                        <p>{{kids.first_name}}</p>
+                        <p>{{kids.last_name}}</p>
+                        <p>{{kids.dob}}</p>
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -56,12 +56,10 @@
                             </a>Rates</h3>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="accordian_details">
-                        <h3>Items</h3>
-                        <p>Money</p>
-                        <div class="img">
-                            <img src="./assets/images/dietimage.jpeg" class="img-fluid"/>
-                        </div>
+                    <div class="accordian_details" *ngFor="let rates of otherDetails.rates">
+                        <h3>{{rates.item}}</h3>
+                        <p>{{rates.price}}</p>
+                        <p>{{rates.value}}</p>
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -78,9 +76,9 @@
                             </a>Notes</h3>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="accordian_details">
-                        <h3>Title</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, quam!</p>
+                    <div class="accordian_details" *ngFor="let notes of otherDetails.notes">
+                        <h3>{{notes.title}}</h3>
+                        <p>{{notes.text}}</p>
                         
                     </div>
                 </mat-expansion-panel>

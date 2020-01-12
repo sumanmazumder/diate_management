@@ -37,9 +37,8 @@ export class OtherClientDetailsComponent implements OnInit {
     this.newservice.getUserData(this.userId).subscribe(
       (success:any)=>{
         console.log(success);
-        this.otherDetails = success.data[0];
+        this.otherDetails = success.data;
         console.log(this.otherDetails);
-        console.log(this.otherDetails.qualification);
       },
       (error)=>{
         console.log(error);

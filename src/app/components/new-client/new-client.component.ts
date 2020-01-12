@@ -34,7 +34,7 @@ import { RatesService } from "../../services/rates.service";
 })
 export class NewClientComponent implements OnInit {
   public firstForm: boolean = true;
-  public secondForm: boolean = false;
+  public secondForm: boolean = true;
   public userId: number;
   public sourceData = [
     "Social Media",
@@ -57,6 +57,9 @@ export class NewClientComponent implements OnInit {
   public email: string;
   public password: string;
   public c_password: string;
+  public weight: string;
+  public height: string;
+  public dob:string;
 
   @ViewChild("newClient", { static: true }) newClientData: ElementRef;
   constructor(
@@ -69,7 +72,7 @@ export class NewClientComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.userId = 21;
+    this.userId = 21;
     // console.log(this.newclientSubmit())
   }
   newclientAdd() {
@@ -101,7 +104,10 @@ export class NewClientComponent implements OnInit {
       email: this.email,
       password: this.password,
       c_password: this.c_password,
-      user_type: "c"
+      user_type: "c",
+      weight: this.weight,
+      height:this.height,
+      dob:this.dob
     };
 
     // alert("click");
