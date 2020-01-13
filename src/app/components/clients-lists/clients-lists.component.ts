@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ClientService } from "src/app/services/client.service";
 import { ClientDetailsInterface } from 'src/app/interfaces/ClientDetailsInterFace';
 import {Sort} from '@angular/material/sort';
-import { NavigationExtras } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+
 @Component({
   selector: "app-clients-lists",
   templateUrl: "./clients-lists.component.html",
@@ -21,7 +22,7 @@ export class ClientsListsComponent implements OnInit {
   
   // this.sortedData: this.data;
 
-  constructor(private clientService: ClientService) {
+  constructor(private clientService: ClientService, public routers :Router) {
     this.sortedData2 = this.sortedData.slice();
   }
 
@@ -75,6 +76,7 @@ export class ClientsListsComponent implements OnInit {
         'getUserId': this.userId, 
       }
     }
+    this.routers.navigate(['./clientDetails'], passData)
   }
 
 
