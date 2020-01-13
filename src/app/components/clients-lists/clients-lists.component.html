@@ -11,7 +11,8 @@
         </select>
         <div class="search">
           <input type="button" />
-          <input type="search" (input)="search($event)"/>
+          <!-- <input type="search" (input)="search($event)"/> -->
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
         </div>
       </div>
     </div>
@@ -34,7 +35,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let client of clientSearchData; let i = index">
+        <tr *ngFor="let client of clientSearchData | filter:searchText; let i = index ">
           <td>{{ i + 1 }}</td>
           <td>{{ client.first_name + " " + client.last_name }}</td>
           <td>25</td>

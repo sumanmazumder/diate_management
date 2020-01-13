@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { QualificationFormComponent } from '../../qualification-form/qualification-form.component';
 import { KidsFormComponent } from '../../kids-form/kids-form.component';
@@ -18,7 +18,7 @@ import { RatesService } from '../../../services/rates.service';
 })
 export class OtherClientDetailsComponent implements OnInit {
   @Input("userId") userId:number;
-  public otherDetails:any;
+  public otherDetails:any = {};
   constructor(
     public dialog: MatDialog, 
     private newservice: NewClientService,
@@ -29,10 +29,20 @@ export class OtherClientDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.getOtherUserdata());
+    // console.log(this.getOtherUserdata());
     
   }
-
+  ngOnChanges(changes: SimpleChanges): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    if(changes.userId){
+      if(this.userId){
+        console.log(this.userId);
+        
+      }
+    }
+    
+  }
   getOtherUserdata(){
     this.newservice.getUserData(this.userId).subscribe(
       (success:any)=>{

@@ -34,7 +34,7 @@ import { RatesService } from "../../services/rates.service";
 })
 export class NewClientComponent implements OnInit {
   public firstForm: boolean = true;
-  public secondForm: boolean = true;
+  public secondForm: boolean = false;
   public userId: number;
   public sourceData = [
     "Social Media",
@@ -72,7 +72,7 @@ export class NewClientComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userId = 21;
+    // this.userId = 21;
     // console.log(this.newclientSubmit())
   }
   newclientAdd() {

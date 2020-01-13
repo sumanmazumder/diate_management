@@ -10,6 +10,7 @@ import { ClientDetailsInterface } from 'src/app/interfaces/ClientDetailsInterFac
 export class ClientsListsComponent implements OnInit {
   clientListData: ClientDetailsInterface[] = [];
   clientSearchData: ClientDetailsInterface[] = [];
+  public searchText:string;
   constructor(private clientService: ClientService) {}
 
   ngOnInit() {
@@ -21,7 +22,7 @@ export class ClientsListsComponent implements OnInit {
       (res: any) => {
         let data = [];
         res.data.forEach(element => {
-          data.push(element.details[0]);
+          data.push(element.details);
         });
         this.clientListData = data;
         this.clientSearchData = this.clientListData;
@@ -35,7 +36,7 @@ export class ClientsListsComponent implements OnInit {
     let searchedData = e.target.value;
     let searchelements = [];
     // this.clientSearchData = this.clientListData;
-    let keys = Object.keys(this.clientListData[0]);
+    let keys = Object.keys(this.clientListData);
     this.clientSearchData.filter((element:ClientDetailsInterface)=>{
       for(let i=0;i<keys.length; i++){
         // console.log(element,keys[i]);

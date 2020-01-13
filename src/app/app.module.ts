@@ -17,6 +17,9 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 import { LoginComponent } from "./views/auth/login/login.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
@@ -81,6 +84,7 @@ import { OtherClientDetailsComponent } from './components/new-client/other-clien
     MatDialogModule,
     MatTabsModule,
     MatSnackBarModule,
+    Ng2SearchPipeModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
