@@ -1,1 +1,24 @@
-<p>header works!</p>
+<!-- <p>header works!</p> -->
+<div class="row align-items-center header">
+    <div class="col-md-6">
+        <p>Menu</p>
+    </div>
+    <div class="col-md-6 text-right">
+        <div class="user_details">
+            <div class="user" mat-button [matMenuTriggerFor]="menu">
+                <div class="img">
+                    <img src="" />
+                </div>
+                <p>Chandan Sen</p>
+                <img src="../../../../assets/images/arrow-down.svg" style="width: 12px;"/>
+            </div>
+            <mat-menu #menu="matMenu">
+                <ul>
+                    <li><a>Log Out</a></li>
+                    <li><a>Profile</a></li>
+                </ul>
+            </mat-menu>
+        </div>
+        
+    </div>
+</div>

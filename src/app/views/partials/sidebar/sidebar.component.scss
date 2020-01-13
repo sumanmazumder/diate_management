@@ -1,32 +1,51 @@
 @import '../../../../styles.scss';
 .side_bar{
-    background-color: $secondary-color;
+    background-color: #43c079;
     height: 100%;
+    .logo{
+        a{
+            text-align: center;
+            width: 100%;
+        }
+        img{
+            width: 200px;
+            margin:0 auto;
+        }
+    }
     ul{
-        margin:21% 0px 0px;
+        margin:5% 0px 0px;
         li{
             width: 100%;
             
             a{
                 padding: 7px 0px;
                 width: 100%;
-                border-bottom: 1px solid #a0c0cf;
+                // border-bottom: 1px solid #a0c0cf;
+                border-bottom: 1px solid rgba(255,255,255,0.5);
                 text-transform: uppercase;
                 font-size: 16px;
                 text-align: center;
                 font-weight: 400;
-                width: 80%;
+                width: 100%;
                 margin:0 auto;
                 display: table;
-                color: #000000;
+                color: #ffffff;
             }
             &:hover{
                 background-color: #ffffff;
+                a{
+                    color: #43c079 !important;
+                }
+                
             }
             
         }
         .active{
             background-color: #ffffff;
+            a{
+                color: #43c079 !important;
+            }
+            
         }
     }
 }

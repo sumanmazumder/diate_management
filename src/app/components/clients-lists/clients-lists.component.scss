@@ -1,1 +1,12 @@
 @import '../../../styles.scss';
+.search{
+    .form-control{
+        border:0px;
+        background-color: transparent;
+        border: 0px;
+        background: url(/assets/images/search-icon.svg) no-repeat right center;
+        &:focus{
+            outline: none;
+        }
+    }
+}

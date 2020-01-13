@@ -6,13 +6,9 @@
         <h1>Clients</h1>
       </div>
       <div class="col-md-6">
-        <select>
-          <option>All Clients</option>
-        </select>
         <div class="search">
-          <input type="button" />
           <!-- <input type="search" (input)="search($event)"/> -->
-          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder="Search">
         </div>
       </div>
     </div>
@@ -21,77 +17,40 @@
     <!-- <mat-tab-group>
             <mat-tab label="Name">
             <ng-template matTabContent> -->
-    <table class="table">
-      <thead>
-        <tr>
-          <td>Sl.No.</td>
-          <td>Name</td>
-          <td>age</td>
-          <td>Gender</td>
-          <td>City</td>
-          <td>Contry</td>
-          <td>Condition</td>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr *ngFor="let client of clientSearchData | filter:searchText; let i = index ">
-          <td>{{ i + 1 }}</td>
-          <td>{{ client.first_name + " " + client.last_name }}</td>
-          <td>25</td>
-          <td>M</td>
-          <td>{{client.city}}</td>
-          <td>{{client.country}}</td>
-          <td>Diabeties</td>
-          <td>
-            <a routerLink="../clientDetails"
-              ><img src="assets/images/view-icon.svg"
-            /></a>
-            <a><img src="assets/images/delete-icon.svg"/></a>
-            <a><img src="assets/images/edit-icon.svg"/></a>
-          </td>
-        </tr>
-        <!-- <tr>
-          <td>Chendan Sen</td>
-          <td>26 yes</td>
-          <td>M</td>
-          <td>Delhi</td>
-          <td>India</td>
-          <td>Diabeties</td>
-          <td>
-            <a><img src="assets/images/view-icon.svg"/></a>
-            <a><img src="assets/images/delete-icon.svg"/></a>
-            <a><img src="assets/images/edit-icon.svg"/></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Chendan Sen</td>
-          <td>26 yes</td>
-          <td>M</td>
-          <td>Delhi</td>
-          <td>India</td>
-          <td>Diabeties</td>
-          <td>
-            <a><img src="assets/images/view-icon.svg"/></a>
-            <a><img src="assets/images/delete-icon.svg"/></a>
-            <a><img src="assets/images/edit-icon.svg"/></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Chendan Sen</td>
-          <td>26 yes</td>
-          <td>M</td>
-          <td>Delhi</td>
-          <td>India</td>
-          <td>Diabeties</td>
-          <td>
-            <a><img src="assets/images/view-icon.svg"/></a>
-            <a><img src="assets/images/delete-icon.svg"/></a>
-            <a><img src="assets/images/edit-icon.svg"/></a>
-          </td>
-        </tr> -->
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table" matSort (matSortChange)="sortData($event)">
+        <thead>
+          <tr>
+            <!-- <td mat-sort-header="sl">Sl.No.</td> -->
+            <td mat-sort-header="first_name">Name</td>
+            <!-- <td mat-sort-header="age">age</td> -->
+            <!-- <td mat-sort-header="gender">Gender</td> -->
+            <td mat-sort-header="city">City</td>
+            <td mat-sort-header="country">Contry</td>
+            <!-- <td mat-sort-header="condition">Condition</td> -->
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let client of clientListData | filter:searchText; let i = index ">
+            <!-- <td>{{ i + 1 }}</td> -->
+            <td>{{ client.first_name + " " + client.last_name }}</td>
+            <!-- <td>25</td> -->
+            <!-- <td>M</td> -->
+            <td>{{client.city}}</td>
+            <td>{{client.country}}</td>
+            <!-- <td>Diabeties</td> -->
+            <td>
+              <a (click)="clientView()"
+                ><img src="assets/images/view-icon.svg"
+              /></a>
+              <a><img src="assets/images/delete-icon.svg"/></a>
+              <a><img src="assets/images/edit-icon.svg"/></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <!-- </ng-template>
         </mat-tab> -->
     <!-- <mat-tab label="Age">

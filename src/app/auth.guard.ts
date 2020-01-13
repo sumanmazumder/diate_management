@@ -39,7 +39,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     return this.authService.getLoggedInUser().pipe(
       map(
         (user: any) => {
-          console.log(user);
+          // console.log(user);
           if (user.data && user.data.id) {
             this.authService.setUser(user['data'])
             return true;
