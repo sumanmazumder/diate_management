@@ -29,7 +29,7 @@ const routes: Routes = [
     {path: '', redirectTo:"allDetails", pathMatch: 'full'},
     { path: "allDetails", component: AllDetailsComponent, canActivate: [AuthGuard],},
     { path: "newClients", component: NewClientComponent, canActivate: [AuthGuard] },
-      { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
+    { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
     
     { path: "notes", component: NotesComponent, canActivate: [AuthGuard]},
     { path: "tasks", component: TasksComponent, canActivate: [AuthGuard]},
