@@ -41,10 +41,11 @@
             <td>{{client.country}}</td>
             <!-- <td>Diabeties</td> -->
             <td>
-              <a (click)="clientView()"
+              <p>{{client.user_id}}</p>
+              <a (click)="clientView(client.user_id)"
                 ><img src="assets/images/view-icon.svg"
               /></a>
-              <a routerLink="clientDetails"><img src="assets/images/delete-icon.svg"/></a>
+              <a><img src="assets/images/delete-icon.svg"/></a>
               <a><img src="assets/images/edit-icon.svg"/></a>
             </td>
           </tr>

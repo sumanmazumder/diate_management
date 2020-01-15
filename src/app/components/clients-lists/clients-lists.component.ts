@@ -16,8 +16,6 @@ export class ClientsListsComponent implements OnInit {
   public sortedData = [];
   public sortedData2 = [];
 
-  public userId : number;
-
   public searchText:string;
   
   // this.sortedData: this.data;
@@ -35,16 +33,9 @@ export class ClientsListsComponent implements OnInit {
         res.data.forEach(element => {
           this.sortedData.push(element.details);
         });
+        
         this.clientListData = this.sortedData;
-        // console.log(this.clientListData);
-
-        this.clientListData.forEach(element => {
-          this.userId = element.user_id;
-          console.log(this.userId);
-          // this.clientView();
-        });
-
-
+        console.log(this.clientListData);
 
         // this.clientSearchData = this.clientListData;
         // console.log(this.clientListData);
@@ -72,12 +63,12 @@ export class ClientsListsComponent implements OnInit {
   //   console.log(this.clientSearchData)
   // }
   
-  clientView(userId){
-    console.log(userId);
+  clientView(user_id){
+    console.log(user_id);
     
     let passData: NavigationExtras={
       queryParams:{
-        'getUserId': userId,
+        'getUserId': user_id,
       }
     }
     this.routers.navigate(['./dashboard/clientDetails'], passData);
