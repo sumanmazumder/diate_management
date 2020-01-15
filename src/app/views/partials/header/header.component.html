@@ -9,13 +9,12 @@
                 <div class="img">
                     <img src="" />
                 </div>
-                <p>Chandan Sen</p>
+                <p>{{userData.email}}</p>
                 <img src="../../../../assets/images/arrow-down.svg" style="width: 12px;"/>
             </div>
             <mat-menu #menu="matMenu">
                 <ul>
-                    <li><a>Log Out</a></li>
-                    <li><a>Profile</a></li>
+                    <li><a (click)="logOut()">Log Out</a></li>
                 </ul>
             </mat-menu>
         </div>

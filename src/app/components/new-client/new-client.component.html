@@ -9,28 +9,28 @@
         <div #firstForm>
             <form class="row">
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="First Name" name="first_name" [(ngModel)]="first_name" required>
+                    <input type="text" class="form-control" placeholder="First Name" name="first_name" [(ngModel)]="userData.details.first_name" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="last Name" name="last_name" [(ngModel)]="last_name" required>
+                    <input type="text" class="form-control" placeholder="last Name" name="last_name" [(ngModel)]="userData.details.last_name" required>
                 </div>
                 <!-- <div class="col-md-4 form-group">
                     <input type="email" class="form-control" placeholder="Email" name="" required>
                 </div> -->
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="Skype Id" name="skype_id" [(ngModel)]="skype_id" required>
+                    <input type="text" class="form-control" placeholder="Skype Id" name="skype_id" [(ngModel)]="userData.details.skype_id" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Phone" name="phone" [(ngModel)]="phone" required>
+                    <input type="number" class="form-control" placeholder="Phone" name="phone" [(ngModel)]="userData.details.phone" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp" name="alt_phone" [(ngModel)]="alt_phone" required>
+                    <input type="number" class="form-control" placeholder="Alternate Phone / Whatapp" name="alt_phone" [(ngModel)]="userData.details.alt_phone" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="city" required>
+                    <input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="userData.details.city" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="Country" name="country" [(ngModel)]="country" required>
+                    <input type="text" class="form-control" placeholder="Country" name="country" [(ngModel)]="userData.details.country" required>
                 </div>
                 <div class="col-md-4 form-group">
                     <input type="text" disabled class="form-control" name="type" value="Client">
@@ -39,28 +39,28 @@
                     </select> -->
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Pin Code" name="pin" [(ngModel)]="pin" required>
+                    <input type="number" class="form-control" placeholder="Pin Code" name="pin" [(ngModel)]="userData.details.pin" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="email" class="form-control" placeholder="email" name="email" [(ngModel)]="email" required>
+                    <input type="email" class="form-control" placeholder="email" name="email" [(ngModel)]="userData.details.email" required>
+                </div>
+                <div class="col-md-4 form-group" *ngIf="!isEdit">
+                    <input type="number" class="form-control" placeholder="password" name="password" [(ngModel)]="userData.details.password" required>
+                </div>
+                <div class="col-md-4 form-group" *ngIf="!isEdit">
+                    <input type="number" class="form-control" placeholder="Confirm Password" name="c_password" [(ngModel)]="userData.details.c_password" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="password" name="pin" [(ngModel)]="password" required>
+                    <input type="date" class="form-control" placeholder="Date of birth" name="dob" [(ngModel)]="userData.details.dob" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="number" class="form-control" placeholder="Confirm Password" name="pin" [(ngModel)]="c_password" required>
+                    <input type="text" class="form-control" placeholder="Weight" name="weight" [(ngModel)]="userData.detailsweight" required>
                 </div>
                 <div class="col-md-4 form-group">
-                    <input type="date" class="form-control" placeholder="Date of birth" name="dob" [(ngModel)]="dob" required>
-                </div>
-                <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="Weight" name="weight" [(ngModel)]="weight" required>
-                </div>
-                <div class="col-md-4 form-group">
-                    <input type="text" class="form-control" placeholder="Height" name="height" [(ngModel)]="height" required>
+                    <input type="text" class="form-control" placeholder="Height" name="height" [(ngModel)]="userData.details.height" required>
                 </div>
                 <div class="col-md-12 form-group">
-                    <textarea id="" class="form-control" placeholder="Address" name="address" [(ngModel)]="address" required></textarea>
+                    <textarea class="form-control" placeholder="Address" name="address" [(ngModel)]="userData.details.address" required></textarea>
                 </div>
                 
                 
@@ -90,26 +90,26 @@
                   <h3>Source</h3>
               </div>
                 <div class="col-md-6">
-                    <select name="assign" id="" class="form-control">
+                    <select name="assign" class="form-control">
                         <option value="1">option 1</option>
                         <option value="2">option 2</option>
                         <option value="3">option 3</option>
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <select name="assign" id="" class="form-control">
+                    <select name="assign" class="form-control">
                         <option [value]="source" *ngFor="let source of sourceData">{{source}}</option>
                     </select>
                 </div>
                 <div class="col-md-12 text-center">
-                    <button (click)="newclientAdd()" class="btn">Save</button>
+                    <button (click)="save()" class="btn">Save</button>
                 </div>
 
             </form>
 
         </div>
         <div *ngIf="secondForm">
-        <app-other-client-details [userId]="userId"></app-other-client-details>
+        <app-other-client-details [userId]="userId" [userData]="userData"></app-other-client-details>
 
         <!-- <div class="row">
             <div class="col-md-6">

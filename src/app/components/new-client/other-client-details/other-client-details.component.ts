@@ -6,11 +6,6 @@ import { RatesFormComponent } from '../../rates-form/rates-form.component';
 import { NotesFormComponent } from '../../notes-form/notes-form.component';
 import { NewClientService } from '../../../services/new-client.service';
 import { newClientInterface } from '../../../interfaces/newClientInterface';
-
-import { QualificationService } from 'src/app/services/qualification.service';
-import { KidsService } from '../../../services/kids.service';
-import { NotesService } from '../../../services/notes.service';
-import { RatesService } from '../../../services/rates.service';
 @Component({
   selector: 'app-other-client-details',
   templateUrl: './other-client-details.component.html',
@@ -18,14 +13,11 @@ import { RatesService } from '../../../services/rates.service';
 })
 export class OtherClientDetailsComponent implements OnInit {
   @Input("userId") userId:number;
+  @Input("userData") userData:any;
   public otherDetails:any = {};
   constructor(
     public dialog: MatDialog, 
     private newservice: NewClientService,
-    private qualificationService: QualificationService,
-    private kidsService: KidsService,
-    private notesService: NotesService,
-    private ratesService : RatesService
   ) { }
 
   ngOnInit() {
@@ -38,10 +30,14 @@ export class OtherClientDetailsComponent implements OnInit {
     if(changes.userId){
       if(this.userId){
         console.log(this.userId);
-        
       }
     }
-    
+    if(changes.userData){
+      if(this.userData){
+        console.log(this.userData);
+        this.otherDetails = this.userData;
+      }
+    }
   }
   getOtherUserdata(){
     this.newservice.getUserData(this.userId).subscribe(

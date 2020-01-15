@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent, canActivate: [GuestGuard] },
 
 
-  { path: "dashboard", component: DashboardComponent, children:[
+  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard], children:[
     {path: '', redirectTo:"allDetails", pathMatch: 'full'},
     { path: "allDetails", component: AllDetailsComponent, canActivate: [AuthGuard],},
     { path: "newClients", component: NewClientComponent, canActivate: [AuthGuard] },
@@ -39,8 +39,10 @@ const routes: Routes = [
     { path: "settings", component: SettingsComponent, canActivate: [AuthGuard]},
 
     {path: "client-lists", component: ClientsListsComponent, canActivate: [AuthGuard]},
-    {path: "clientDetails", component: ClientsViewComponent, canActivate: [AuthGuard]}
+    {path: "clientDetails/:userId", component: ClientsViewComponent, canActivate: [AuthGuard]},
+    {path: "clientEdit/:userId", component: NewClientComponent, canActivate: [AuthGuard]}
   ]},
+  
 ];
 
 @NgModule({

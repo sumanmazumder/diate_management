@@ -42,11 +42,11 @@
             <!-- <td>Diabeties</td> -->
             <td>
               <p>{{client.user_id}}</p>
-              <a (click)="clientView(client.user_id)"
+              <a [routerLink]="['../clientDetails', client.user_id]"
                 ><img src="assets/images/view-icon.svg"
               /></a>
               <a><img src="assets/images/delete-icon.svg"/></a>
-              <a><img src="assets/images/edit-icon.svg"/></a>
+              <a [routerLink]="['../clientEdit', client.user_id]"><img src="assets/images/edit-icon.svg"/></a>
             </td>
           </tr>
         </tbody>

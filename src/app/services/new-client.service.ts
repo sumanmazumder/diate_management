@@ -13,6 +13,11 @@ export class NewClientService {
     // console.log(url);
     return this.http.post(url, UserDetail);
   }
+  public updateClient(UserDetail:any,userId){
+    const url = this.apiService.getUrl(`UserDetail/${userId}`);
+    UserDetail._method = 'PUT';
+    return this.http.post(url, UserDetail);
+  }
   getUserData(userId:any){
     const url = this.apiService.getUrl(`userById/${userId}`);
     console.log(url);

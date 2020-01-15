@@ -7,25 +7,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./clients-view.component.scss']
 })
 export class ClientsViewComponent implements OnInit {
-  public userId: number;
-  constructor( private newClient: NewClientService, private router: ActivatedRoute) { }
+  constructor( private newClientService: NewClientService, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.getData());
-    console.log(this.getClientData())
+    this.getParamaterData()
   }
   add(){
     
   }
-  getData(){
-    this.router.queryParams.subscribe(passData=>{
-      // console.log(passData);
-      this.userId = passData['getUserId'];
-      console.log(this.userId);
+  getParamaterData(){
+    // this.router.queryParams.subscribe(passData=>{
+    //   this.userId = passData['getUserId'];
+    //   console.log(this.userId);
+    // })
+    this.router.params.subscribe(response=>{
+      console.log(response['userId']);
+      this.getClientData(response['userId']);
     })
   }
-  getClientData(){
-    this.newClient.getUserData(this.userId).subscribe(
+  getClientData(userId){
+    this.newClientService.getUserData(userId).subscribe(
       (success:any)=>{
         console.log(success);
       }

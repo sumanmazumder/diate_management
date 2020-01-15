@@ -62,32 +62,6 @@ export class ClientsListsComponent implements OnInit {
   //   });
   //   console.log(this.clientSearchData)
   // }
-  
-  clientView(user_id){
-    console.log(user_id);
-    
-    let passData: NavigationExtras={
-      queryParams:{
-        'getUserId': user_id,
-      }
-    }
-    this.routers.navigate(['./dashboard/clientDetails'], passData);
-    // console.log(passData);
-    
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
