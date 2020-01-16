@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { ratesInterface } from '../../interfaces/ratesInterface';
-import { RatesService } from '../../services/rates.service';
+import { ratesInterface } from '../../../interfaces/ratesInterface';
+import { RatesService } from '../../../services/rates.service';
 @Component({
   selector: 'app-rates-form',
   templateUrl: './rates-form.component.html',

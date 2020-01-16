@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { QualificationFormComponent } from '../../qualification-form/qualification-form.component';
-import { KidsFormComponent } from '../../kids-form/kids-form.component';
-import { RatesFormComponent } from '../../rates-form/rates-form.component';
-import { NotesFormComponent } from '../../notes-form/notes-form.component';
+import { QualificationFormComponent } from '../../modal/qualification-form/qualification-form.component';
+import { KidsFormComponent } from '../../modal/kids-form/kids-form.component';
+import { RatesFormComponent } from '../../modal/rates-form/rates-form.component';
+import { NotesFormComponent } from '../../modal/notes-form/notes-form.component';
 import { NewClientService } from '../../../services/new-client.service';
 import { newClientInterface } from '../../../interfaces/newClientInterface';
 @Component({

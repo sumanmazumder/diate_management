@@ -33,10 +33,10 @@
                             </a> Kids</h3>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="accordian_details" *ngFor="let kids of otherDetails.kids">
-                        <p>{{kids.first_name}}</p>
-                        <p>{{kids.last_name}}</p>
-                        <p>{{kids.dob}}</p>
+                    <div class="accordian_details kids_details" *ngFor="let kids of otherDetails.kids">
+                        <p>First Name: <b>{{kids.first_name}}</b></p>
+                        <p>Last Name: <b>{{kids.last_name}}</b></p>
+                        <p>Date Of Birth: <b>{{kids.dob}}</b></p>
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>

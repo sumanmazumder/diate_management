@@ -1,7 +1,7 @@
 import { Component, OnInit , ViewChild, ElementRef, Inject} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { notesInterface } from '../../interfaces/notesInterface';
-import { NotesService } from '../../services/notes.service';
+import { notesInterface } from '../../../interfaces/notesInterface';
+import { NotesService } from '../../../services/notes.service';
 @Component({
   selector: 'app-notes-form',
   templateUrl: './notes-form.component.html',

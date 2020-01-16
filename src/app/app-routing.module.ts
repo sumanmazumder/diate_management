@@ -6,11 +6,11 @@ import { AuthGuard } from "./auth.guard";
 import { AllDetailsComponent } from './components/all-details/all-details.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
 import { NewDietitianComponent } from './components/new-dietitian/new-dietitian.component';
-import { NotesComponent } from './components/notes/notes.component';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { IssuesComponent } from './components/issues/issues.component';
+// import { NotesComponent } from './components/notes/notes.component';
+import { TasksComponent } from './components/modal/tasks/tasks.component';
+// import { IssuesComponent } from './components/modal/issues/issues.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { InvoicesComponent } from './components/invoices/invoices.component';
+// import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GuestGuard } from './guest.guard';
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
@@ -31,11 +31,11 @@ const routes: Routes = [
     { path: "newClients", component: NewClientComponent, canActivate: [AuthGuard] },
     { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
     
-    { path: "notes", component: NotesComponent, canActivate: [AuthGuard]},
-    { path: "tasks", component: TasksComponent, canActivate: [AuthGuard]},
-    { path: "issues", component: IssuesComponent, canActivate: [AuthGuard]},
+    // { path: "notes", component: NotesComponent, canActivate: [AuthGuard]},
+    
+    // { path: "issues", component: IssuesComponent, canActivate: [AuthGuard]},
     { path: "canendar", component: CalendarComponent, canActivate: [AuthGuard]},
-    { path: "invoices", component: InvoicesComponent, canActivate: [AuthGuard]},
+    // { path: "invoices", component: InvoicesComponent, canActivate: [AuthGuard]},
     { path: "settings", component: SettingsComponent, canActivate: [AuthGuard]},
 
     {path: "client-lists", component: ClientsListsComponent, canActivate: [AuthGuard]},

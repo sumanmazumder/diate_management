@@ -23,7 +23,7 @@ import { NewClientService } from "../../services/new-client.service";
   styleUrls: ["./new-client.component.scss"]
 })
 export class NewClientComponent implements OnInit {
-  public userData:any = {details:{}};
+  public userData:any = {details:{user_type: "c",}};
   public firstForm: boolean = true;
   public secondForm: boolean = false;
   public userId: string;
@@ -120,6 +120,7 @@ export class NewClientComponent implements OnInit {
 
   newclientFormData() {
     return this.userData.details;
+    
     // return {
     //   first_name: this.first_name,
     //   last_name: this.last_name,

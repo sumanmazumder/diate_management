@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { kidsInterface } from '../../interfaces/kidsInterfaces';
-import { KidsService } from '../../services/kids.service';
+import { kidsInterface } from '../../../interfaces/kidsInterfaces';
+import { KidsService } from '../../../services/kids.service';
 @Component({
   selector: 'app-kids-form',
   templateUrl: './kids-form.component.html',

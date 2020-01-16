@@ -30,21 +30,27 @@ import { SidebarComponent } from './views/partials/sidebar/sidebar.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
 import { NewDietitianComponent } from './components/new-dietitian/new-dietitian.component';
 import { AllDetailsComponent } from './components/all-details/all-details.component';
-import { NotesComponent } from './components/notes/notes.component';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { IssuesComponent } from './components/issues/issues.component';
+
+import { TasksComponent } from './components/modal/tasks/tasks.component';
+import { IssuesComponent } from './components/modal/issues/issues.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { InvoicesComponent } from './components/invoices/invoices.component';
+
 import { SettingsComponent } from './components/settings/settings.component';
 import { ErrorViewComponent } from './components/error-view/error-view.component';
-import { QualificationFormComponent } from './components/qualification-form/qualification-form.component';
-import { KidsFormComponent } from './components/kids-form/kids-form.component';
-import { RatesFormComponent } from './components/rates-form/rates-form.component';
-import { NotesFormComponent } from './components/notes-form/notes-form.component';
+import { QualificationFormComponent } from './components/modal/qualification-form/qualification-form.component';
+import { KidsFormComponent } from './components/modal/kids-form/kids-form.component';
+import { RatesFormComponent } from './components/modal/rates-form/rates-form.component';
+import { NotesFormComponent } from './components/modal/notes-form/notes-form.component';
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
 import { ClientsViewComponent } from './components/clients-view/clients-view.component';
 import { OtherClientDetailsComponent } from './components/new-client/other-client-details/other-client-details.component';
 
+
+import { MedicalHistoryComponent } from './components/modal/medical-history/medical-history.component';
+import { ProgressComponent } from './components/modal/progress/progress.component';
+import { NotesComponent } from './components/modal/notes/notes.component';
+// import { IssuesComponent } from './components/modal/issues/issues.component';
+import { InvoicesComponent } from './components/modal/invoices/invoices.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +76,8 @@ import { OtherClientDetailsComponent } from './components/new-client/other-clien
     ClientsListsComponent,
     ClientsViewComponent,
     OtherClientDetailsComponent,
+    MedicalHistoryComponent,
+    ProgressComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +104,14 @@ import { OtherClientDetailsComponent } from './components/new-client/other-clien
     QualificationFormComponent,
     KidsFormComponent,
     RatesFormComponent,
-    NotesFormComponent
+    NotesFormComponent,
+
+    ProgressComponent,
+    MedicalHistoryComponent,
+    IssuesComponent,
+    TasksComponent,
+    InvoicesComponent,
+    NotesComponent
   ]
 })
 export class AppModule {}

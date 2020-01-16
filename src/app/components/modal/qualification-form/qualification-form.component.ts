@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 // import {MatDialogRef} from '@angular/material/dialog';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { QualificationService } from '../../services/qualification.service';
-import { qualificationInterface } from '../../interfaces/qualificationInterface';
+import { QualificationService } from '../../../services/qualification.service';
+import { qualificationInterface } from '../../../interfaces/qualificationInterface';
 
 @Component({
   selector: 'app-qualification-form',
