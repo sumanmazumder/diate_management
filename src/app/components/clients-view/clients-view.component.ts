@@ -17,7 +17,11 @@ import { InvoicesComponent } from '../modal/invoices/invoices.component';
   styleUrls: ['./clients-view.component.scss']
 })
 export class ClientsViewComponent implements OnInit {
-  constructor( private newClientService: NewClientService, private router: ActivatedRoute, public dialog: MatDialog) { }
+  public userId: number;
+  constructor( private newClientService: NewClientService, 
+    private router: ActivatedRoute, 
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
     this.getParamaterData()
@@ -28,6 +32,7 @@ export class ClientsViewComponent implements OnInit {
     //   console.log(this.userId);
     // })
     this.router.params.subscribe(response=>{
+      this.userId = response['userId'];
       console.log(response['userId']);
       this.getClientData(response['userId']);
     })
@@ -42,37 +47,37 @@ export class ClientsViewComponent implements OnInit {
   medicalAdd(){
     this.dialog.open(MedicalHistoryComponent, {
       width:'500px',
-      data: {}
+      data: {userId: this.userId}
     })
   }
   progressAdd(){
     this.dialog.open(ProgressComponent,{
       width:'500px',
-      data: {}
+      data: {userId: this.userId}
     })
   }
   notesAdd(){
     this.dialog.open(NotesComponent, {
       width:'500px',
-      data: {}
+      data: {userId: this.userId}
     })
   }
   tacksAdd(){
     this.dialog.open(TasksComponent, {
       width:'500px',
-      data: {}
+      data: {userId: this.userId}
     })
   }
   issuesAdd(){
     this.dialog.open(IssuesComponent,{
       width:'500px',
-      data: {}
+      data: {userId: this.userId}
     })
   }
   invoicesAdd(){
     this.dialog.open(InvoicesComponent,{
       width:'500px',
-      data: {}
+      data: {userId: this.userId}
     })
   }
 }

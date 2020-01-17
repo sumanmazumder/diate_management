@@ -4,21 +4,14 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class NotesService {
+export class IssueService {
 
   constructor(
     private http: HttpClient,
     private apiService: ApiService
   ) { }
-
-  notesData(Data:any){
-    const url = this.apiService.getUrl("UserNote");
-    return this.http.post(url, Data);
-  }
-
-  // modal notes services
-  noteFromData(data:any){
-    const url = this.apiService.getUrl("UserNote");
+  issueFromData(data:any){
+    const url = this.apiService.getUrl("UserIssue");
     return this.http.post(url, data);
   }
 }
