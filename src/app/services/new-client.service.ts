@@ -20,9 +20,8 @@ export class NewClientService {
   }
   getUserData(userId:any){
     const url = this.apiService.getUrl(`userById/${userId}`);
-    console.log(url);
-    console.log(userId);
-    
+    // console.log(url);
+    // console.log(userId);
     return this.http.get(url);
   }
 }

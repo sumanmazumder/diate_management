@@ -4,13 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientService {
+export class TasksListService {
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
-
-  getClientList(){
-    const url = this.apiService.getUrl("userClientList");
+  getTaskList(){
+    const url = this.apiService.getUrl("UserTask");
     return this.http.get(url);
   }
-  
 }

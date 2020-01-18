@@ -28,6 +28,7 @@ export class NewClientComponent implements OnInit {
   public secondForm: boolean = false;
   public userId: string;
   public isEdit:boolean = false;
+  public title:string = 'Add New Client';
   public sourceData = [
     "Social Media",
     "Google",
@@ -72,6 +73,7 @@ export class NewClientComponent implements OnInit {
       if(response['userId']){
         this.userId = response['userId'];
         this.isEdit = true;
+        this.title = "Edit Client";
         this.getClientData(response['userId']);
       }else{
         this.isEdit = false;

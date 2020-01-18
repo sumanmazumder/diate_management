@@ -31,15 +31,15 @@ export class QualificationFormComponent implements OnInit {
     this.qualyServices.qualificationData(this.getFromData()).subscribe(
       (user:any)=>{
         console.log(user);
-        this.closeDialog();
+        this.closeDialog('success');
       },
       (error)=>{
         console.log(error);
       }
     )
   }
-  closeDialog(){
-    this.dialogRef.close();
+  closeDialog(param){
+    this.dialogRef.close(param);
   }
 
 

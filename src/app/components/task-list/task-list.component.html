@@ -1,0 +1,35 @@
+<p>task-list works!</p>
+<div class="client_list">
+    <div class="col-md-12">
+        <div class="row heading align-items-center">
+          <div class="col-md-6">
+            <h1>Notes List</h1>
+          </div>
+          <div class="col-md-6">
+            <div class="search">
+              <!-- <input type="search" (input)="search($event)"/> -->
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder="Search">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of tastsList">
+                        <td>{{item.title}}</td>
+                        <td>{{item.task}}</td>
+                        <td>{{item.sub_task}}</td>
+                        <td>{{item.assign_user_id}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>

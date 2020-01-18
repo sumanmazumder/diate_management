@@ -18,13 +18,19 @@ import { InvoicesComponent } from '../modal/invoices/invoices.component';
 })
 export class ClientsViewComponent implements OnInit {
   public userId: number;
-  constructor( private newClientService: NewClientService, 
+  public userData:any;
+  public userDetails = [];
+  public medhistiory:any;
+  public notes:any;
+  constructor( 
+    private newClientService: NewClientService, 
     private router: ActivatedRoute, 
     public dialog: MatDialog
     ) { }
 
   ngOnInit() {
     this.getParamaterData()
+    // this.clientOtherDetails();
   }
   getParamaterData(){
     // this.router.queryParams.subscribe(passData=>{
@@ -40,44 +46,71 @@ export class ClientsViewComponent implements OnInit {
   getClientData(userId){
     this.newClientService.getUserData(userId).subscribe(
       (success:any)=>{
-        console.log(success);
+        this.userData = success['data'];
+        this.userDetails.push(success['data'].details);
+        this.medhistiory = success['data'].medhistory;
+        this.notes = success['data'].notes;
+        // console.log(this.notes);
+        // console.log(this.userData);
       }
     )
   }
+
+
+
+
   medicalAdd(){
-    this.dialog.open(MedicalHistoryComponent, {
+    const dialogRef = this.dialog.open(MedicalHistoryComponent, {
       width:'500px',
       data: {userId: this.userId}
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.getClientData(this.userId);
     })
   }
   progressAdd(){
-    this.dialog.open(ProgressComponent,{
+    const dialogRef = this.dialog.open(ProgressComponent,{
       width:'500px',
       data: {userId: this.userId}
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.getClientData(this.userId);
     })
   }
   notesAdd(){
-    this.dialog.open(NotesComponent, {
+    const dialogRef = this.dialog.open(NotesComponent, {
       width:'500px',
       data: {userId: this.userId}
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.getClientData(this.userId);
     })
   }
   tacksAdd(){
-    this.dialog.open(TasksComponent, {
+    const dialogRef = this.dialog.open(TasksComponent, {
       width:'500px',
       data: {userId: this.userId}
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.getClientData(this.userId);
     })
   }
   issuesAdd(){
-    this.dialog.open(IssuesComponent,{
+    const dialogRef = this.dialog.open(IssuesComponent,{
       width:'500px',
       data: {userId: this.userId}
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.getClientData(this.userId);
     })
   }
   invoicesAdd(){
-    this.dialog.open(InvoicesComponent,{
+    const dialogRef = this.dialog.open(InvoicesComponent,{
       width:'500px',
       data: {userId: this.userId}
+    });
+    dialogRef.afterClosed().subscribe(result=>{
+      this.getClientData(this.userId);
     })
   }
 }

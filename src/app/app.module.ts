@@ -51,6 +51,10 @@ import { ProgressComponent } from './components/modal/progress/progress.componen
 import { NotesComponent } from './components/modal/notes/notes.component';
 // import { IssuesComponent } from './components/modal/issues/issues.component';
 import { InvoicesComponent } from './components/modal/invoices/invoices.component';
+import { NoteListComponent } from './components/note-list/note-list.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { IssueListComponent } from './components/issue-list/issue-list.component';
+import { DietitianListComponent } from './components/dietitian-list/dietitian-list.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +82,10 @@ import { InvoicesComponent } from './components/modal/invoices/invoices.componen
     OtherClientDetailsComponent,
     MedicalHistoryComponent,
     ProgressComponent,
+    NoteListComponent,
+    TaskListComponent,
+    IssueListComponent,
+    DietitianListComponent,
   ],
   imports: [
     BrowserModule,

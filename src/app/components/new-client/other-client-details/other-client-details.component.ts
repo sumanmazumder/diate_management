@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { QualificationFormComponent } from '../../modal/qualification-form/qualification-form.component';
 import { KidsFormComponent } from '../../modal/kids-form/kids-form.component';
 import { RatesFormComponent } from '../../modal/rates-form/rates-form.component';
@@ -57,7 +57,9 @@ export class OtherClientDetailsComponent implements OnInit {
       data: {userId: this.userId}
     });
     dialogRef.afterClosed().subscribe(result=>{
-      this.getOtherUserdata();
+      if(result=='success'){
+        this.getOtherUserdata();
+      }
     })
   }
   openKids(){

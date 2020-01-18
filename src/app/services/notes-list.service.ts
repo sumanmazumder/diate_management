@@ -4,13 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientService {
+export class NotesListService {
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
-
-  getClientList(){
-    const url = this.apiService.getUrl("userClientList");
+  getNotesList(){
+    const url = this.apiService.getUrl("UserNote");
     return this.http.get(url);
   }
-  
 }

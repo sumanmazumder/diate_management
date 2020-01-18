@@ -14,7 +14,7 @@ export interface newDitiationInterface {
   sp_first_name?: string;
   sp_last_name?: string;
   sp_anniversary?: string;
-  type?: string;
+  user_type?: string;
   email?: string;
   c_password?: string;
   password?: string;
@@ -64,6 +64,7 @@ export class NewDietitianComponent implements OnInit {
     );
   }
   newclientFormData() {
+    this.data.user_type='d';
     return this.data;
   }
 

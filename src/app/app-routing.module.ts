@@ -6,15 +6,16 @@ import { AuthGuard } from "./auth.guard";
 import { AllDetailsComponent } from './components/all-details/all-details.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
 import { NewDietitianComponent } from './components/new-dietitian/new-dietitian.component';
-// import { NotesComponent } from './components/notes/notes.component';
-import { TasksComponent } from './components/modal/tasks/tasks.component';
-// import { IssuesComponent } from './components/modal/issues/issues.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-// import { InvoicesComponent } from './components/invoices/invoices.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GuestGuard } from './guest.guard';
 import { ClientsListsComponent } from './components/clients-lists/clients-lists.component';
 import { ClientsViewComponent } from './components/clients-view/clients-view.component';
+import { IssueListComponent } from './components/issue-list/issue-list.component';
+import { NoteListComponent } from './components/note-list/note-list.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { DietitianListComponent } from './components/dietitian-list/dietitian-list.component';
+
 
 
 
@@ -31,16 +32,19 @@ const routes: Routes = [
     { path: "newClients", component: NewClientComponent, canActivate: [AuthGuard] },
     { path: "newDietitian", component: NewDietitianComponent, canActivate: [AuthGuard] },
     
-    // { path: "notes", component: NotesComponent, canActivate: [AuthGuard]},
     
-    // { path: "issues", component: IssuesComponent, canActivate: [AuthGuard]},
     { path: "canendar", component: CalendarComponent, canActivate: [AuthGuard]},
-    // { path: "invoices", component: InvoicesComponent, canActivate: [AuthGuard]},
     { path: "settings", component: SettingsComponent, canActivate: [AuthGuard]},
-
+    
     {path: "client-lists", component: ClientsListsComponent, canActivate: [AuthGuard]},
     {path: "clientDetails/:userId", component: ClientsViewComponent, canActivate: [AuthGuard]},
-    {path: "clientEdit/:userId", component: NewClientComponent, canActivate: [AuthGuard]}
+    {path: "clientEdit/:userId", component: NewClientComponent, canActivate: [AuthGuard]},
+    
+    {path: "dietitions-lists", component: DietitianListComponent, canActivate: [AuthGuard]},
+
+    { path: "notes-list", component: NoteListComponent, canActivate: [AuthGuard]},
+    { path: "issue-list", component: IssueListComponent, canActivate: [AuthGuard]},
+    { path: "task-list", component: TaskListComponent, canActivate: [AuthGuard]},
   ]},
   
 ];
