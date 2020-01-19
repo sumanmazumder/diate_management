@@ -22,7 +22,7 @@
         <thead>
           <tr>
             <!-- <td mat-sort-header="sl">Sl.No.</td> -->
-            <td mat-sort-header="first_name">Name</td>
+            <td mat-sort-header="name">Name</td>
             <!-- <td mat-sort-header="age">age</td> -->
             <!-- <td mat-sort-header="gender">Gender</td> -->
             <td mat-sort-header="city">City</td>
@@ -30,11 +30,11 @@
             <!-- <td mat-sort-header="condition">Condition</td> -->
           </tr>
         </thead>
-  
+
         <tbody>
           <tr *ngFor="let client of clientListData | filter:searchText; let i = index ">
             <!-- <td>{{ i + 1 }}</td> -->
-            <td>{{ client.first_name + " " + client.last_name }}</td>
+            <td>{{ client.name }}</td>
             <!-- <td>25</td> -->
             <!-- <td>M</td> -->
             <td>{{client.city}}</td>

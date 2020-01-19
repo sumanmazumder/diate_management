@@ -3,13 +3,16 @@
     <a><img src="../../../../assets/images/logo.svg" class="img-fluid"/></a>
   </div>
   <ul>
-    <li routerLinkActive="active">
+    <li routerLinkActive="active" *ngFor="let sideBar of sideBarlist">
+      <a [routerLink]="sideBar.link">{{sideBar.name}}</a>
+    </li>
+    <!-- <li routerLinkActive="active">
       <a routerLink="allDetails">Dashboard</a>
     </li>
     <li routerLinkActive="active" >
       <a routerLink="client-lists">Clients</a>
     </li >
-    <li routerLinkActive="">
+    <li routerLinkActive="active">
       <a routerLink="dietitions-lists">Dietitians</a>
     </li>
     <li routerLinkActive="active">
@@ -23,6 +26,6 @@
     </li>
     <li routerLinkActive="active"><a routerLink="canendar">Calender</a></li>
     <li routerLinkActive="active"><a routerLink="invoices">Invoices</a></li>
-    <li routerLinkActive="active"><a routerLink="settings">Settings</a></li>
+    <li routerLinkActive="active"><a routerLink="settings">Settings</a></li> -->
   </ul>
 </div>
