@@ -12,7 +12,7 @@ export class DietitianListComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.getDietititionList());
-    
+
   }
   getDietititionList(){
     this.service.getdietitionsList().subscribe(

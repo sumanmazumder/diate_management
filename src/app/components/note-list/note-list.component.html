@@ -1,4 +1,3 @@
-<p>note-list works!</p>
 <div class="client_list">
     <div class="col-md-12">
         <div class="row heading align-items-center">
@@ -17,14 +16,13 @@
         <div class="table-responsive">
             <table class="table">
                 <thead>
-                    <tr>
-                        <th></th>
+                    <tr *ngIf="notesList">
+                        <th *ngFor="let key of getKeys(notesList[0])">{{key}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of notesList">
-                        <td>{{item.title}}</td>
-                        <td>{{item.text}}</td>
+                    <tr *ngFor="let item of notesList | filter:searchText;">
+                      <td *ngFor="let key of getKeys(item)">{{item[key]}}</td>
                     </tr>
                 </tbody>
             </table>

@@ -6,6 +6,7 @@ import {
   MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 import { NewClientService } from "../../services/new-client.service";
+import { DietitionsListService } from 'src/app/services/dietitions-list.service';
 // export interface newClientInterface{
 //   first_name?: string;
 //   last_name?: string;
@@ -37,6 +38,7 @@ export class NewClientComponent implements OnInit {
     "Website",
     "Other"
   ];
+  public dietititionList = [];
 
   // public first_name: string;
   // public last_name: string;
@@ -58,7 +60,8 @@ export class NewClientComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private newClientService: NewClientService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private service: DietitionsListService
   ) {}
 
   ngOnInit() {
@@ -66,6 +69,7 @@ export class NewClientComponent implements OnInit {
     // console.log(this.newclientSubmit())
 
     this.getparamData();
+    this.getDietititionList()
   }
   getparamData(){
     this.router.params.subscribe(response=>{
@@ -80,6 +84,18 @@ export class NewClientComponent implements OnInit {
       }
     })
   }
+
+  getDietititionList(){
+    this.service.getdietitionsList().subscribe(
+      (success:any)=>{
+        console.log(success['data']);
+        success.data.forEach(element => {
+          this.dietititionList.push(element.details);
+        });
+      }
+    )
+  }
+
   getClientData(userId){
     this.newClientService.getUserData(userId).subscribe(
       (success:any)=>{
@@ -89,7 +105,7 @@ export class NewClientComponent implements OnInit {
       },
       (error:any)=>{
         console.log(error);
-        
+
       }
     )
   }
@@ -122,7 +138,7 @@ export class NewClientComponent implements OnInit {
 
   newclientFormData() {
     return this.userData.details;
-    
+
     // return {
     //   first_name: this.first_name,
     //   last_name: this.last_name,

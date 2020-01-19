@@ -1,20 +1,20 @@
 <!-- <p>clients-view works!</p> -->
 
 <div class="client-details" >
-    <div class="col-md-12" *ngFor="let item of userDetails">
+    <div class="col-md-12" >
         <div class="row heading align-items-center">
             <div class="col-md-6">
-                <h1>{{item.first_name + " " +item.last_name}}</h1>
+                <h1>{{userDetails?.first_name + " " +userDetails?.last_name}}</h1>
             </div>
         </div>
     </div>
-    <div class="col-md-12" *ngFor="let item of userDetails">
+    <div class="col-md-12">
         <div class="section">
             <!-- <div class="row"> -->
                 <div class="col">
-                    <p><b>Id {{item.user_id}}</b></p>
-                    <p>City {{item.city}}</p>
-                    <p>Country {{item.country}}</p>
+                    <p><b>Id {{userDetails?.user_id}}</b></p>
+                    <p>City {{userDetails?.city}}</p>
+                    <p>Country {{userDetails?.country}}</p>
                 </div>
                 <div class="col">
                     <p><b>Spouse</b></p>
@@ -39,23 +39,23 @@
             <!-- </div> -->
         </div>
     </div>
-    <div class="col-md-12" *ngFor="let item of userDetails">
+    <div class="col-md-12" >
         <div class="section">
             <div class="col">
                 <p><b>Email</b></p>
-                <p>{{userData.email}}</p>
+                <p>{{userData?.email}}</p>
             </div>
             <div class="col">
                 <p><b>Contact</b></p>
-                <p>{{item.phone}}</p>
+                <p>{{userDetails?.phone}}</p>
             </div>
             <div class="col">
                 <p><b>Alternate</b></p>
-                <p>{{item.alt_phone}}</p>
+                <p>{{userDetails?.alt_phone}}</p>
             </div>
             <div class="col">
                 <p><b>Skype</b></p>
-                <p>{{item.skype_id}}</p>
+                <p>{{userDetails?.skype_id}}</p>
             </div>
             <div class="col">
                 <a>Request Testimonial</a>
@@ -171,7 +171,7 @@
                 </table>
             </div>
         </div>
-        
+
     </div>
-    
+
 </div>
