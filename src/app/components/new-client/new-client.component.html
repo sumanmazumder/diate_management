@@ -144,6 +144,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Your Weight(kg):</label>
           <input
             type="text"
             class="form-control"
@@ -151,9 +152,11 @@
             name="weight"
             [(ngModel)]="userData.detailsweight"
             required
+            (input)="weight($event)"
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Your Height(cm)</label>
           <input
             type="text"
             class="form-control"
@@ -161,15 +164,25 @@
             name="height"
             [(ngModel)]="userData.details.height"
             required
+            (input)="height($event)"
           />
         </div>
+        <a (click)="bmi()">Get bmi</a>
         <div class="col-md-4 form-group">
-          <input
+          <!-- <input
             type="text"
             class="form-control"
             placeholder="Bmi"
             name="bmi"
             [(ngModel)]="userData.details.bmi"
+            required
+          /> -->
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Bmi"
+            name="bmi"
+            [(ngModel)]="bmiData"
             required
           />
         </div>

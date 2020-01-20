@@ -38,6 +38,12 @@ export class NewClientComponent implements OnInit {
     "Website",
     "Other"
   ];
+
+  public userWeight:number;
+  public userHeight:number;
+  public bmiData:number;
+
+
   public dietititionList = [];
 
   // public first_name: string;
@@ -70,6 +76,8 @@ export class NewClientComponent implements OnInit {
 
     this.getparamData();
     this.getDietititionList()
+    console.log(this.bmi());
+    
   }
   getparamData(){
     this.router.params.subscribe(response=>{
@@ -160,5 +168,23 @@ export class NewClientComponent implements OnInit {
 
     // alert("click");
     // return new FormData(this.newClientData.nativeElement);
+  }
+  
+  weight(e){
+    this.userWeight = e.target.value;
+    console.log(this.userWeight);
+    
+  }
+  height(e){
+    this.userHeight = e.target.value;
+    console.log(this.userHeight);
+  }
+  bmi(){
+    alert("bmi")
+    if(this.userWeight > 0 && this.userHeight>0){
+      this.bmiData = this.userWeight/(this.userHeight/100*this.userHeight/100);
+      console.log(this.bmiData);
+      
+    }
   }
 }
