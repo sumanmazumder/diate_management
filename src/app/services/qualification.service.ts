@@ -14,12 +14,12 @@ export class QualificationService {
 
   qualificationData(Data: any){
     const url = this.apiService.getUrl("UserQualification");
-    console.log(url);
+    // console.log(url);
     return this.http.post(url, Data);
   }
   getqualification(){
     const url = this.apiService.getUrl("UserQualification");
-    console.log(url);
+    // console.log(url);
     return this.http.get(url);
   }
 }
