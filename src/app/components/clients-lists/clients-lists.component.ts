@@ -37,12 +37,12 @@ export class ClientsListsComponent implements OnInit {
             + " " + (this.sortedData[index].last_name
            ? this.sortedData[index].last_name
            : "");
-           console.log(name)
+          //  console.log(name)
           this.sortedData[index].name = name;
         });
 
         this.clientListData = this.sortedData;
-        console.log(this.clientListData);
+        // console.log(this.clientListData);
 
         // this.clientSearchData = this.clientListData;
         // console.log(this.clientListData);
@@ -80,10 +80,10 @@ export class ClientsListsComponent implements OnInit {
           return 0;
       }
     });
-    console.log(this.clientListData);
+    // console.log(this.clientListData);
   }
 }
 function compare(a: number | string, b: number | string, isAsc: boolean) {
-  console.log(a, b, isAsc);
+  // console.log(a, b, isAsc);
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

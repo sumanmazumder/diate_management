@@ -9,6 +9,7 @@
     <div #firstForm>
       <form class="row">
         <div class="col-md-4 form-group">
+          <label for="">First Name: </label>
           <input
             type="text"
             class="form-control"
@@ -19,6 +20,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Last Name:</label>
           <input
             type="text"
             class="form-control"
@@ -32,6 +34,7 @@
                     <input type="email" class="form-control" placeholder="Email" name="" required>
                 </div> -->
         <div class="col-md-4 form-group">
+          <label>Skype Id</label>
           <input
             type="text"
             class="form-control"
@@ -42,6 +45,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Phone Number</label>
           <input
             type="number"
             class="form-control"
@@ -52,6 +56,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Alternate Number</label>
           <input
             type="number"
             class="form-control"
@@ -62,6 +67,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>City</label>
           <input
             type="text"
             class="form-control"
@@ -72,6 +78,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Country</label>
           <input
             type="text"
             class="form-control"
@@ -82,6 +89,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Client</label>
           <input
             type="text"
             disabled
@@ -94,6 +102,7 @@
                     </select> -->
         </div>
         <div class="col-md-4 form-group">
+          <label>Pin Code :</label>
           <input
             type="number"
             class="form-control"
@@ -104,6 +113,7 @@
           />
         </div>
         <div class="col-md-4 form-group">
+          <label>Email :</label>
           <input
             type="email"
             class="form-control"
@@ -114,6 +124,7 @@
           />
         </div>
         <div class="col-md-4 form-group" *ngIf="!isEdit">
+          <label>Pasword :</label>
           <input
             type="number"
             class="form-control"
@@ -124,6 +135,7 @@
           />
         </div>
         <div class="col-md-4 form-group" *ngIf="!isEdit">
+          <label>Confirm Password :</label>
           <input
             type="number"
             class="form-control"
@@ -133,7 +145,8 @@
             required
           />
         </div>
-        <div class="col-md-4 form-group">
+        <div class="col-md-6 form-group">
+          <label>Date :</label>
           <input
             type="date"
             class="form-control"
@@ -143,7 +156,17 @@
             required
           />
         </div>
-        <div class="col-md-4 form-group">
+        <div class="col-md-6 form-group">
+          <label>Initial Observation</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Initial Observation"
+            name="initialObservation"
+            required
+          />
+        </div>
+        <div class="col-md-5 form-group">
           <label>Your Weight(kg):</label>
           <input
             type="text"
@@ -155,7 +178,7 @@
             (input)="weight($event)"
           />
         </div>
-        <div class="col-md-4 form-group">
+        <div class="col-md-5 form-group">
           <label>Your Height(cm)</label>
           <input
             type="text"
@@ -167,8 +190,10 @@
             (input)="height($event)"
           />
         </div>
-        <a (click)="bmi()">Get bmi</a>
-        <div class="col-md-4 form-group">
+        
+        <div class="col-md-2 form-group">
+          <a (click)="bmis()">Get bmi</a>
+          <p>{{bmiData}}</p>
           <!-- <input
             type="text"
             class="form-control"
@@ -177,24 +202,8 @@
             [(ngModel)]="userData.details.bmi"
             required
           /> -->
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Bmi"
-            name="bmi"
-            [(ngModel)]="bmiData"
-            required
-          />
         </div>
-        <div class="col-md-4 form-group">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Initial Observation"
-            name="initialObservation"
-            required
-          />
-        </div>
+        
         <div class="col-md-12 form-group">
           <textarea
             class="form-control"

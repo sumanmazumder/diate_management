@@ -9,6 +9,7 @@ import { NotesComponent } from "../modal/notes/notes.component";
 import { TasksComponent } from "../modal/tasks/tasks.component";
 import { IssuesComponent } from "../modal/issues/issues.component";
 import { InvoicesComponent } from "../modal/invoices/invoices.component";
+import { DietChartFormComponent } from '../modal/diet-chart-form/diet-chart-form.component';
 
 @Component({
   selector: "app-clients-view",
@@ -20,6 +21,7 @@ export class ClientsViewComponent implements OnInit {
   public userData: any;
   public userDetails: any;
   public medhistiory: any;
+  public progress: any;
   public notes: any;
   constructor(
     private newClientService: NewClientService,
@@ -38,7 +40,7 @@ export class ClientsViewComponent implements OnInit {
     // })
     this.router.params.subscribe(response => {
       this.userId = response["userId"];
-      console.log(response["userId"]);
+      // console.log(response["userId"]);
       this.getClientData(response["userId"]);
     });
   }
@@ -46,9 +48,10 @@ export class ClientsViewComponent implements OnInit {
     this.newClientService.getUserData(userId).subscribe((success: any) => {
       this.userData = success["data"];
       this.userDetails=success["data"].details;
-      this.medhistiory = success["data"].medhistory;
+      // this.medhistiory = success["data"].medhistory;
+      // this.progress = success["data"].progress;
       this.notes = success["data"].notes;
-      console.log(this.userDetails);
+      console.log(this.userData);
       // console.log(this.userData);
     });
   }
@@ -105,6 +108,12 @@ export class ClientsViewComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getClientData(this.userId);
+    });
+  }
+  dietChat(){
+    const dialogRef = this.dialog.open(DietChartFormComponent, {
+      width: "1000px",
+      data: { userId: this.userId }
     });
   }
 }

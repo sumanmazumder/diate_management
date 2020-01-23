@@ -24,7 +24,8 @@ import { DietitionsListService } from 'src/app/services/dietitions-list.service'
   styleUrls: ["./new-client.component.scss"]
 })
 export class NewClientComponent implements OnInit {
-  public userData:any = {details:{user_type: "c",}};
+  public bmiData:number;
+  public userData:any = {details:{user_type: "c", bmi: this.bmiData}};
   public firstForm: boolean = true;
   public secondForm: boolean = false;
   public userId: string;
@@ -41,7 +42,7 @@ export class NewClientComponent implements OnInit {
 
   public userWeight:number;
   public userHeight:number;
-  public bmiData:number;
+  
 
 
   public dietititionList = [];
@@ -76,7 +77,8 @@ export class NewClientComponent implements OnInit {
 
     this.getparamData();
     this.getDietititionList()
-    console.log(this.bmi());
+    console.log(this.bmis());
+    console.log(this.newclientFormData());
     
   }
   getparamData(){
@@ -145,29 +147,8 @@ export class NewClientComponent implements OnInit {
   }
 
   newclientFormData() {
+    
     return this.userData.details;
-
-    // return {
-    //   first_name: this.first_name,
-    //   last_name: this.last_name,
-    //   skype_id: this.skype_id,
-    //   phone: this.phone,
-    //   alt_phone: this.alt_phone,
-    //   city: this.city,
-    //   country: this.country,
-    //   address: this.address,
-    //   pin: this.pin,
-    //   email: this.email,
-    //   password: this.password,
-    //   c_password: this.c_password,
-    //   user_type: "c",
-    //   weight: this.weight,
-    //   height:this.height,
-    //   dob:this.dob
-    // };
-
-    // alert("click");
-    // return new FormData(this.newClientData.nativeElement);
   }
   
   weight(e){
@@ -179,12 +160,10 @@ export class NewClientComponent implements OnInit {
     this.userHeight = e.target.value;
     console.log(this.userHeight);
   }
-  bmi(){
-    alert("bmi")
+  bmis(){
     if(this.userWeight > 0 && this.userHeight>0){
       this.bmiData = this.userWeight/(this.userHeight/100*this.userHeight/100);
       console.log(this.bmiData);
-      
     }
   }
 }

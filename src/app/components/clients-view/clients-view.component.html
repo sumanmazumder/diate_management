@@ -67,32 +67,29 @@
             <div class="user_madical" >
                 <h3>Medical History</h3>
                 <ul >
-                    <div *ngFor="let item of medhistiory">
+                    <div *ngFor="let item of userData.medhistory">
 
-                        <li>{{item.title}}</li>
-                        <li>{{item.text}}</li>
-                        <li><img [src]="item.doc" class="img-fluid"></li>
+                        <li>{{item?.title}}</li>
+                        <li>{{item?.text}}</li>
+                        <li><img [src]="item?.doc" class="img-fluid"></li>
                     </div>
                 </ul>
                 <a (click)="medicalAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="user_madical">
+            <div class="user_madical" >
                 <h3>Progress</h3>
                 <ul>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
+                    <div *ngFor="let item of userData.progress">
+                        <li>gggg</li>
+                    </div>
                 </ul>
                 <a (click)="progressAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="user_madical">
+            <div class="user_madical notes">
                 <h3>Notes</h3>
                 <ul>
                     <div *ngFor="let item of notes">
@@ -108,26 +105,23 @@
             <div class="user_madical">
                 <h3>Tacks</h3>
                 <ul>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
+                    <div *ngFor="let item of userData.tasks">
+                        <li></li>
+                    </div>
                 </ul>
                 <a (click)="tacksAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="user_madical">
+            <div class="user_madical" >
                 <h3>Issues</h3>
-                <ul>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
+                <ul >
+                    <div *ngFor="let item of userData.issue">
+                        <li>{{item?.title}}</li>
+                        <li>{{item?.issue}}</li>
+                        <li>{{item?.priority}}</li>
+                    </div>
+                    
                 </ul>
                 <a (click)="issuesAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>
             </div>
@@ -136,18 +130,14 @@
             <div class="user_madical">
                 <h3>Invoices</h3>
                 <ul>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
-                    <li>Label 1</li>
+                    <div *ngFor="let item of invoice"></div>
+                    <li></li>
                 </ul>
                 <a (click)="invoicesAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>
             </div>
         </div>
         <div class="col-md-12">
-            <div class="diate_managment">
+            <div class="diate_chat">
                 <h3>Diet Charts</h3>
                 <table class="table">
                     <thead>
@@ -167,8 +157,12 @@
                             <td>Chandan sen</td>
                             <td>&nbsp;</td>
                         </tr>
+                        <tr>
+                            <td>Label</td>
+                        </tr>
                     </tbody>
-                </table>
+                </table>    
+                <a (click)="dietChat()">Add</a>
             </div>
         </div>
 

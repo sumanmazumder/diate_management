@@ -55,6 +55,7 @@ import { NoteListComponent } from './components/note-list/note-list.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { IssueListComponent } from './components/issue-list/issue-list.component';
 import { DietitianListComponent } from './components/dietitian-list/dietitian-list.component';
+import { DietChartFormComponent } from './components/modal/diet-chart-form/diet-chart-form.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { DietitianListComponent } from './components/dietitian-list/dietitian-li
     TaskListComponent,
     IssueListComponent,
     DietitianListComponent,
+    DietChartFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +121,8 @@ import { DietitianListComponent } from './components/dietitian-list/dietitian-li
     IssuesComponent,
     TasksComponent,
     InvoicesComponent,
-    NotesComponent
+    NotesComponent,
+    DietChartFormComponent
   ]
 })
 export class AppModule {}

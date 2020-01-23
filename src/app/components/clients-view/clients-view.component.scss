@@ -20,7 +20,7 @@
     .user_madical{
         background-color: #ededed;
         padding: 10px 0px;
-        width: 90%;
+        width: 100%;
         margin:auto 0 30px;
         h3{
             text-align: center;
@@ -32,16 +32,27 @@
         ul{
             overflow-y: scroll;
             max-height: 180px;
-            width: 90%;
+            width: 100%;
             margin:0 auto;
             padding: 0px 10px;
+            div{
+                background-color: #fff;
+                margin-bottom: 5px;
+                display: table;
+                width: 100%;
+            }
             li{
                 width: 100%;
-                background-color: #fff;
                 padding: 10px;
                 border-bottom: 1px solid $gray-color;
+                font-size: 15px;
+                font-weight: 400;
+                text-transform: capitalize;
             }
         }
+    }
+    .notes{
+        li{width: 100% !important; float: left;}
     }
 }
 .add{
