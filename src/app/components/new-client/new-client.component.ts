@@ -24,8 +24,8 @@ import { DietitionsListService } from 'src/app/services/dietitions-list.service'
   styleUrls: ["./new-client.component.scss"]
 })
 export class NewClientComponent implements OnInit {
-  public bmiData:number;
-  public userData:any = {details:{user_type: "c", bmi: this.bmiData}};
+  // public bmiData:number;
+  public userData:any = {details:{user_type: "c"}};
   public firstForm: boolean = true;
   public secondForm: boolean = false;
   public userId: string;
@@ -76,8 +76,7 @@ export class NewClientComponent implements OnInit {
     // console.log(this.newclientSubmit())
 
     this.getparamData();
-    this.getDietititionList()
-    console.log(this.bmis());
+    this.getDietititionList();
     console.log(this.newclientFormData());
     
   }
@@ -151,19 +150,16 @@ export class NewClientComponent implements OnInit {
     return this.userData.details;
   }
   
-  weight(e){
-    this.userWeight = e.target.value;
-    console.log(this.userWeight);
-    
-  }
-  height(e){
-    this.userHeight = e.target.value;
-    console.log(this.userHeight);
-  }
-  bmis(){
-    if(this.userWeight > 0 && this.userHeight>0){
-      this.bmiData = this.userWeight/(this.userHeight/100*this.userHeight/100);
-      console.log(this.bmiData);
-    }
-  }
+  
+//  public get bmis(){
+//     if(this.userData.details.weight && this.userData.details.height){
+//       console.log("data");
+//       if(this.userData.details.weight > 0 && this.userData.details.height>0){
+//         this.userData.details.bmi = this.userData.details.weight/(this.userData.details.height/100*this.userData.details.height/100);
+//         console.log(this.userData.details.bmi);
+//         return this.userData.details.bmi
+//       }
+//     }
+//     return ""
+//   }
 }

@@ -67,7 +67,7 @@
             <div class="user_madical" >
                 <h3>Medical History</h3>
                 <ul >
-                    <div *ngFor="let item of userData.medhistory">
+                    <div *ngFor="let item of userData?.medhistory">
 
                         <li>{{item?.title}}</li>
                         <li>{{item?.text}}</li>
@@ -81,7 +81,7 @@
             <div class="user_madical" >
                 <h3>Progress</h3>
                 <ul>
-                    <div *ngFor="let item of userData.progress">
+                    <div *ngFor="let item of userData?.progress">
                         <li>gggg</li>
                     </div>
                 </ul>
@@ -105,7 +105,7 @@
             <div class="user_madical">
                 <h3>Tacks</h3>
                 <ul>
-                    <div *ngFor="let item of userData.tasks">
+                    <div *ngFor="let item of userData?.tasks">
                         <li></li>
                     </div>
                 </ul>
@@ -116,7 +116,7 @@
             <div class="user_madical" >
                 <h3>Issues</h3>
                 <ul >
-                    <div *ngFor="let item of userData.issue">
+                    <div *ngFor="let item of userData?.issue">
                         <li>{{item?.title}}</li>
                         <li>{{item?.issue}}</li>
                         <li>{{item?.priority}}</li>
@@ -130,8 +130,12 @@
             <div class="user_madical">
                 <h3>Invoices</h3>
                 <ul>
-                    <div *ngFor="let item of invoice"></div>
-                    <li></li>
+                    <div *ngFor="let item of userData?.invoice">
+                        <li>{{item?.invoice_number}}</li>
+                        <li>{{item?.amount}}</li>
+                        <li>{{item?.narration}}</li>
+                        <li><img [src]="item?.doc" alt=""></li>
+                    </div>
                 </ul>
                 <a (click)="invoicesAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>
             </div>

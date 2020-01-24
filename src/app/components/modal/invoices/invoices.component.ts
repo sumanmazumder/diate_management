@@ -26,7 +26,7 @@ export class InvoicesComponent implements OnInit {
     this.service.invoicesForm(this.getFromData()).subscribe(
       (user:any)=>{
         console.log(user);
-        
+        this.close('success');
       },(error)=>{
         console.log(error);
         
@@ -36,7 +36,7 @@ export class InvoicesComponent implements OnInit {
   getFromData(){
     return new FormData(this.invoicesForm.nativeElement)
   }
-  close(){
-    this.dialogRef.close()
+  close(param){
+    this.dialogRef.close(param)
   }
 }

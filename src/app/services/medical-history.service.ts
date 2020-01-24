@@ -12,4 +12,14 @@ export class MedicalHistoryService {
     const url = this.apiService.getUrl("UserMedHistory");
     return this.http.post(url, data);
   }
+  medicalHistoryDelete(id:number){
+    const url = this.apiService.getUrl(`UserMedHistory/${id}`);
+    return this.http.delete(url);
+  }
+
+  medicalHistoryUpdate(id:number, data:any){
+    data._method="PUT";
+    const url = this.apiService.getUrl(`UserMedHistory/${id}`);
+    return this.http.post(url, data);
+  }
 }

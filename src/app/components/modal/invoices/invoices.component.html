@@ -8,10 +8,16 @@
                 <input type="hidden" placeholder="Items" class="form-control" name="user_id" [value]="data.userId" required/>
             </div>
             <div class="col-md-12 form-group">
-                <input type="text" name="title" class="form-control"/>
+                <input type="number" name="invoice_number" placeholder="Invoice Number" class="form-control"/>
             </div>
             <div class="col-md-12 form-group">
-                <textarea name="text" class="form-control"></textarea>
+                <input type="number" name="amount" class="form-control"/>
+            </div>
+            <div class="col-md-12 form-group">
+                <input type="text" name="narration" class="form-control"/>
+            </div>
+            <div class="col-md-12 form-group">
+                <input type="file" name="doc" class="form-control"/>
             </div>
             <div>
                 <button (click)="invoicesFromData()" class="submit">Submit</button>
