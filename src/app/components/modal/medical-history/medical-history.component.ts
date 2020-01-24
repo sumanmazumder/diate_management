@@ -10,6 +10,12 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class MedicalHistoryComponent implements OnInit {
   @ViewChild("medicalHistoryForm", {static:true}) medicalHistoryForm:ElementRef;
   public user: medicalHistoryInterface = {};
+
+  medicalData = {
+    title: this.data.title,
+    text: this.data.text,
+    doc: this.data.doc,
+  }
   constructor(private medicalServices:MedicalHistoryService,
     @Inject(MAT_DIALOG_DATA) public data:any,
     public dialogRef: MatDialogRef<MedicalHistoryComponent>
@@ -17,13 +23,14 @@ export class MedicalHistoryComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.data.userId);
+    console.log(this.data.medicalId);
     
   }
   medicalHistoryFromData(){
     this.medicalServices.medicalHistory(this.getFromData()).subscribe(
       (user:any)=>{
         console.log(user);
-        this.close();
+        this.close('success');
       },(error)=>{
         console.log(error);
       }
@@ -32,7 +39,7 @@ export class MedicalHistoryComponent implements OnInit {
   getFromData(){
     return new FormData(this.medicalHistoryForm.nativeElement)
   }
-  close(){
-    this.dialogRef.close();
+  close(param){
+    this.dialogRef.close(param);
   }
 }

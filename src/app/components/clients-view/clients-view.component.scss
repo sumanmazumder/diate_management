@@ -48,6 +48,27 @@
                 font-size: 15px;
                 font-weight: 400;
                 text-transform: capitalize;
+                &:last-child{
+                    display: flex;
+                    justify-content: space-between;
+                    a{
+                        padding: 3px 0px;
+                        border-radius: 3px;
+                        flex-grow: 1;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        &:first-child{
+                            background-color: #1cc443;
+                            margin-right: 5px;
+                        }
+                        &:last-child{
+                            background-color: #de3850;
+                        }
+                    }
+                }
             }
         }
     }

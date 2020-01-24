@@ -22,7 +22,7 @@ export class ProgressComponent implements OnInit {
     this.medicalServices.progress(this.getFromData()).subscribe(
       (user:any)=>{
         console.log(user);
-        this.close();
+        this.close('success');
       },(error)=>{
         console.log(error);
       }
@@ -31,7 +31,7 @@ export class ProgressComponent implements OnInit {
   getFromData(){
     return new FormData(this.progressForm.nativeElement)
   }
-  close(){
-    this.dialogRef.close();
+  close(param){
+    this.dialogRef.close(param);
   }
 }

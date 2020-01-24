@@ -72,6 +72,7 @@
                         <li>{{item?.title}}</li>
                         <li>{{item?.text}}</li>
                         <li><img [src]="item?.doc" class="img-fluid"></li>
+                        <li><a (click)="MediEdit(item?.id)">Edit</a><a (click)="Delete(item?.id)">Delete</a></li>
                     </div>
                 </ul>
                 <a (click)="medicalAdd()" class="add"><img src="./assets/images/plus-icon.svg"/></a>

@@ -23,7 +23,7 @@ export class NotesComponent implements OnInit {
     this.noteServices.noteFromData(this.getFromData()).subscribe(
       (user:any)=>{
         console.log(user);
-        this.close();
+        this.close('success');
       },(error)=>{
         console.log(error);
       }
@@ -32,7 +32,7 @@ export class NotesComponent implements OnInit {
   getFromData(){
     return new FormData(this.noteForm.nativeElement)
   }
-  close(){
-    this.dialogRef.close();
+  close(param){
+    this.dialogRef.close(param);
   }
 }

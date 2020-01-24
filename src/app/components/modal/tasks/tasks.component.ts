@@ -25,7 +25,7 @@ export class TasksComponent implements OnInit {
     this.service.tacksForm(this.getFromData()).subscribe(
       (user:any)=>{
         console.log(user);
-        
+        this.close('success')
       },(error)=>{
         console.log(error);
         
@@ -35,7 +35,7 @@ export class TasksComponent implements OnInit {
   getFromData(){
     return new FormData(this.tacksForm.nativeElement)
   }
-  close(){
-    this.dialogRef.close()
+  close(param){
+    this.dialogRef.close(param)
   }
 }

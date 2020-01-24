@@ -18,11 +18,19 @@ import { DietChartFormComponent } from '../modal/diet-chart-form/diet-chart-form
 })
 export class ClientsViewComponent implements OnInit {
   public userId: number;
+  public Id: number;
   public userData: any;
   public userDetails: any;
   public medhistiory: any;
   public progress: any;
   public notes: any;
+
+
+  medicalId: number;
+  medicalTitle: string;
+  medicalText: string;
+  medicaldoc: string;
+
   constructor(
     private newClientService: NewClientService,
     private router: ActivatedRoute,
@@ -56,22 +64,43 @@ export class ClientsViewComponent implements OnInit {
     });
   }
 
+    
+      
+
+    
   medicalAdd() {
     const dialogRef = this.dialog.open(MedicalHistoryComponent, {
       width: "500px",
       data: { userId: this.userId }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientData(this.userId);
+      if(result == 'success'){
+        this.getClientData(this.userId);        
+      }
     });
   }
+  MediEdit(id:number){
+    const dialogRef = this.dialog.open(MedicalHistoryComponent,{
+      data: {medicalId : id, title: this.medicalTitle, text: this.medicalText, doc: this.medicaldoc}
+    })
+  }
+  Delete(){
+
+  }
+
+
+
+
+
   progressAdd() {
     const dialogRef = this.dialog.open(ProgressComponent, {
       width: "500px",
       data: { userId: this.userId }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientData(this.userId);
+      if(result == 'success'){
+        this.getClientData(this.userId);
+      }
     });
   }
   notesAdd() {
@@ -80,7 +109,9 @@ export class ClientsViewComponent implements OnInit {
       data: { userId: this.userId }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientData(this.userId);
+      if(result == 'success'){
+        this.getClientData(this.userId);
+      }
     });
   }
   tacksAdd() {
@@ -89,7 +120,9 @@ export class ClientsViewComponent implements OnInit {
       data: { userId: this.userId }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientData(this.userId);
+      if(result == 'success'){
+        this.getClientData(this.userId);
+      };
     });
   }
   issuesAdd() {
@@ -98,7 +131,9 @@ export class ClientsViewComponent implements OnInit {
       data: { userId: this.userId }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientData(this.userId);
+      if(result == 'success'){
+        this.getClientData(this.userId);
+      }
     });
   }
   invoicesAdd() {
@@ -107,7 +142,9 @@ export class ClientsViewComponent implements OnInit {
       data: { userId: this.userId }
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getClientData(this.userId);
+      if(result == 'success'){
+        this.getClientData(this.userId);
+      }
     });
   }
   dietChat(){
@@ -116,4 +153,7 @@ export class ClientsViewComponent implements OnInit {
       data: { userId: this.userId }
     });
   }
+
+
+
 }
