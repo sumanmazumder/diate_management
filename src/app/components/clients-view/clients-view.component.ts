@@ -84,15 +84,14 @@ export class ClientsViewComponent implements OnInit {
     });
   }
   
-  // MediEdit(id:number){
-  //   const dialogRef = this.dialog.open(MedicalHistoryComponent, this.myDialog{
-  //     found = this.userData.medhistory.find(element=>{
-  //       return element.id == id;
-  //     }),
-  //     data: {medicalId : id, }
-      
-  //   })
-  // }
+  MediEdit(id:number){
+    const found = this.userData.medhistory.find(element=>{
+      return element.id == id;
+    });
+    const dialogRef = this.dialog.open(MedicalHistoryComponent,{
+      data: {}
+    });
+  }
   Delete(){
 
   }
