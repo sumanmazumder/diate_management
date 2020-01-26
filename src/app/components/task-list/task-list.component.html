@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of tastsList">
+                    <tr *ngFor="let item of tastsList | filter:searchText" >
                         <td>{{item.title}}</td>
                         <td>{{item.task}}</td>
                         <td>{{item.sub_task}}</td>

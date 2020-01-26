@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NewClientService } from "../../services/new-client.service";
 import { ActivatedRoute } from "@angular/router";
-import { MatDialog } from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 
 import { MedicalHistoryComponent } from "../modal/medical-history/medical-history.component";
 import { ProgressComponent } from "../modal/progress/progress.component";
@@ -21,21 +21,25 @@ export class ClientsViewComponent implements OnInit {
   public Id: number;
   public userData: any;
   public userDetails: any;
-  public medhistiory: any;
-  public progress: any;
-  public notes: any;
+  public found:any;
 
-
-  medicalId: number;
-  medicalTitle: string;
-  medicalText: string;
-  medicaldoc: string;
+  mediaclId:number;
+  myDialog = new MatDialogConfig();
+  // medicalId: number;
+  // medicalTitle: string;
+  // medicalText: string;
+  // medicaldoc: string;
 
   constructor(
     private newClientService: NewClientService,
     private router: ActivatedRoute,
     public dialog: MatDialog
-  ) {}
+  ) {
+    this.myDialog.disableClose = false;
+    this.myDialog.autoFocus = false;
+    this.myDialog.width = '500px';
+    
+  }
 
   ngOnInit() {
     this.getParamaterData();
@@ -48,19 +52,19 @@ export class ClientsViewComponent implements OnInit {
     // })
     this.router.params.subscribe(response => {
       this.userId = response["userId"];
-      // console.log(response["userId"]);
       this.getClientData(response["userId"]);
+      
     });
   }
   getClientData(userId) {
     this.newClientService.getUserData(userId).subscribe((success: any) => {
       this.userData = success["data"];
       this.userDetails=success["data"].details;
-      // this.medhistiory = success["data"].medhistory;
-      // this.progress = success["data"].progress;
-      this.notes = success["data"].notes;
-      console.log(this.userData);
-      // console.log(this.userData);
+      this.userData.medhistory.forEach(element => {
+        // this.mediaclId = element.id;
+        // console.log(this.mediaclId);
+      });
+      console.log(this.userData)
     });
   }
 
@@ -69,21 +73,26 @@ export class ClientsViewComponent implements OnInit {
 
     
   medicalAdd() {
-    const dialogRef = this.dialog.open(MedicalHistoryComponent, {
-      width: "500px",
-      data: { userId: this.userId }
-    });
+    this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(MedicalHistoryComponent, this.myDialog);
+    console.log(this.myDialog);
+    
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);        
       }
     });
   }
-  MediEdit(id:number){
-    const dialogRef = this.dialog.open(MedicalHistoryComponent,{
-      data: {medicalId : id, title: this.medicalTitle, text: this.medicalText, doc: this.medicaldoc}
-    })
-  }
+  
+  // MediEdit(id:number){
+  //   const dialogRef = this.dialog.open(MedicalHistoryComponent, this.myDialog{
+  //     found = this.userData.medhistory.find(element=>{
+  //       return element.id == id;
+  //     }),
+  //     data: {medicalId : id, }
+      
+  //   })
+  // }
   Delete(){
 
   }
@@ -93,10 +102,8 @@ export class ClientsViewComponent implements OnInit {
 
 
   progressAdd() {
-    const dialogRef = this.dialog.open(ProgressComponent, {
-      width: "500px",
-      data: { userId: this.userId }
-    });
+    this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(ProgressComponent, this.myDialog);
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);
@@ -104,10 +111,8 @@ export class ClientsViewComponent implements OnInit {
     });
   }
   notesAdd() {
-    const dialogRef = this.dialog.open(NotesComponent, {
-      width: "500px",
-      data: { userId: this.userId }
-    });
+    this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(NotesComponent,this.myDialog);
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);
@@ -115,10 +120,8 @@ export class ClientsViewComponent implements OnInit {
     });
   }
   tacksAdd() {
-    const dialogRef = this.dialog.open(TasksComponent, {
-      width: "500px",
-      data: { userId: this.userId }
-    });
+    this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(TasksComponent, this.myDialog);
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);
@@ -126,10 +129,8 @@ export class ClientsViewComponent implements OnInit {
     });
   }
   issuesAdd() {
-    const dialogRef = this.dialog.open(IssuesComponent, {
-      width: "500px",
-      data: { userId: this.userId }
-    });
+    this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(IssuesComponent, this.myDialog);
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);
@@ -137,10 +138,8 @@ export class ClientsViewComponent implements OnInit {
     });
   }
   invoicesAdd() {
-    const dialogRef = this.dialog.open(InvoicesComponent, {
-      width: "500px",
-      data: { userId: this.userId }
-    });
+    this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(InvoicesComponent, this.myDialog);
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);

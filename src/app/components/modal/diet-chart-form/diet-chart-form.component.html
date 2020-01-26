@@ -1,4 +1,4 @@
-<div class="diet-chat-form">
+<div class="diet-chat">
     <div mat-dialog-title text-center>
         <h3>Add Diet Chart - Chanden Sen</h3>
     </div>
@@ -6,13 +6,99 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="from-group">
-                    <input type="" class="form-control" />
+                    <input type="" class="form-control" [(ngModel)]="dietChatObject.week" />
                 </div>
                 <div class="from-group">
-                    
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" [(ngModel)]="dietChatObject.notes"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Item</td>
+                                <td>Suggested Change</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td *ngFor="let item of dietChatObject.items">
+                                    <input type="text" name="" placeholder="item.item" [(ngModel)]="item.item"/>
+                                </td>
+                                <td *ngFor="let item of dietChatObject.items">
+                                    <input type="text" name="" placeholder="item.item" [(ngModel)]="item.suggest"/>
+                                </td>
+                                <!-- <td><input type="text" name="" placeholder="Skimmed /low fat"/></td> -->
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+        <div class="col-md-12 diet-chat-form">
+            <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Day No :</td>
+                        <td>Day :</td>
+                        <td>Early Morning :</td>
+                        <td>Breakfast :</td>
+                        <td>Midmorning :</td>
+                        <td>Lunch :</td>
+                        <td>Afternoon Snack :</td>
+                        <td>Evening Snack :</td>
+                        <td>Diner :</td>
+                        <td>After Diner :</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dietChat of dietChatObject.diet_sub_chart, let i = index">
+                        
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.day_no">
+                        </td>
+                        <td >
+                            <select [(ngModel)]="dietChat.day">
+                                <option *ngFor="let day of week" [value]="day">{{day}}</option>
+                            </select>
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.early_morning">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.breakfast">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.mid_morning">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.lunch">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.afternoon_snack">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.evening_snack">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.dinner">
+                        </td>
+                        <td >
+                            <input type="text" class="form-control" [(ngModel)]="dietChat.after_dinner">
+                        </td>
+                    </tr>
+                    <a (click)="addDiet()">Add</a>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="btn_group">
+            <button>Save Draf</button>
+            <button>Save Send</button>
+        </div>
+        
     </mat-dialog-content>
 </div>

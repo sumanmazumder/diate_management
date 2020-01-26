@@ -9,7 +9,7 @@ import { TasksListService } from 'src/app/services/tasks-list.service';
 export class TaskListComponent implements OnInit {
   public tastsList:any;
   constructor(private service: TasksListService) { }
-
+  public searchText: string;
   ngOnInit() {
     console.log(this.taskList());
     

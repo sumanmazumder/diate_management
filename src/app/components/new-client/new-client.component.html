@@ -47,7 +47,9 @@
         <div class="col-md-4 form-group">
           <label>Phone Number</label>
           <input
-            type="number"
+          [appnospace]="'nospace'"
+          appOnlyNumber 
+            type="text"
             class="form-control"
             placeholder="Phone"
             name="phone"
@@ -56,14 +58,17 @@
           />
         </div>
         <div class="col-md-4 form-group">
-          <label>Alternate Number</label>
+          <label>Alternate Number : </label>
           <input
-            type="number"
+          [appnospace]="'nospace'"
+          [appOnlyNumber]="'onlynumber'"
+            type="text"
             class="form-control"
             placeholder="Alternate Phone / Whatapp"
             name="alt_phone"
             [(ngModel)]="userData.details.alt_phone"
             required
+            
           />
         </div>
         <div class="col-md-4 form-group">
@@ -126,7 +131,7 @@
         <div class="col-md-4 form-group" *ngIf="!isEdit">
           <label>Pasword :</label>
           <input
-            type="number"
+            type="password"
             class="form-control"
             placeholder="password"
             name="password"
@@ -137,7 +142,7 @@
         <div class="col-md-4 form-group" *ngIf="!isEdit">
           <label>Confirm Password :</label>
           <input
-            type="number"
+            type="password"
             class="form-control"
             placeholder="Confirm Password"
             name="c_password"

@@ -1,3 +1,18 @@
 .diet-chat-form{
-    
+    input{
+        width: 50px;
+    }
+    table{
+        thead{
+            tr{
+                td{
+                    background-color: #ff1751;
+                    color: #fff;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+        }
+        input{width: 100%;}
+    }
 }

@@ -9,7 +9,7 @@ import { DietitionsListService } from 'src/app/services/dietitions-list.service'
 export class DietitianListComponent implements OnInit {
   public dietititionList = [];
   constructor(private service: DietitionsListService) { }
-
+  public searchText: string;
   ngOnInit() {
     console.log(this.getDietititionList());
 

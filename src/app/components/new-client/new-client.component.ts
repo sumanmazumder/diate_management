@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
+
 import {
   MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
 } from "@angular/material/dialog";
 import { NewClientService } from "../../services/new-client.service";
 import { DietitionsListService } from 'src/app/services/dietitions-list.service';

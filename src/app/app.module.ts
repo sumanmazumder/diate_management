@@ -21,6 +21,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSortModule} from '@angular/material/sort';
 
+
+import { OnlyNumberDirective } from './directive/only-number.directive';
+import { NoSpaceDirective } from './directive/no-space.directive';
+
+
+
 import { LoginComponent } from "./views/auth/login/login.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
 import { FormsModule } from "@angular/forms";
@@ -56,9 +62,14 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { IssueListComponent } from './components/issue-list/issue-list.component';
 import { DietitianListComponent } from './components/dietitian-list/dietitian-list.component';
 import { DietChartFormComponent } from './components/modal/diet-chart-form/diet-chart-form.component';
+import { MaxLengthPipe } from './pipe/max-length.pipe';
+
 
 @NgModule({
   declarations: [
+
+    OnlyNumberDirective,
+    NoSpaceDirective,
     AppComponent,
     LoginComponent,
     DashboardComponent,
@@ -88,8 +99,11 @@ import { DietChartFormComponent } from './components/modal/diet-chart-form/diet-
     IssueListComponent,
     DietitianListComponent,
     DietChartFormComponent,
+    MaxLengthPipe,
+    
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
