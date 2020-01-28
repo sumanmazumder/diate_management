@@ -27,6 +27,8 @@
             <!-- <td mat-sort-header="gender">Gender</td> -->
             <td mat-sort-header="city">City</td>
             <td mat-sort-header="country">Contry</td>
+            <!-- <td mat-sort-header="gender">Gender</td> -->
+            <td mat-sort-header="age">Age</td>
             <!-- <td mat-sort-header="condition">Condition</td> -->
           </tr>
         </thead>
@@ -35,11 +37,10 @@
           <tr *ngFor="let client of clientListData | filter:searchText; let i = index ">
             <!-- <td>{{ i + 1 }}</td> -->
             <td>{{ client.name }}</td>
-            <!-- <td>25</td> -->
-            <!-- <td>M</td> -->
             <td>{{client.city}}</td>
             <td>{{client.country}}</td>
-            <!-- <td>Diabeties</td> -->
+            <!-- <td>M</td> -->
+            <td>{{client.user_age}}</td>
             <td>
               <!-- <p>{{client.user_id}}</p> -->
               <a [routerLink]="['../clientDetails', client.user_id]"

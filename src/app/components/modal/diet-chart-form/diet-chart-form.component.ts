@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DietChatService } from 'src/app/services/diet-chat.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-diet-chart-form',
@@ -14,8 +16,10 @@ export class DietChartFormComponent implements OnInit {
   public arrayTwo = [];
   public weekIndex: string;
   public dietChatObject:any = {
+    
     week: '',
     notes: '',
+    is_approve:0,
     items: [
       {item: '', suggest: ''}
     ],
@@ -32,9 +36,15 @@ export class DietChartFormComponent implements OnInit {
       after_dinner: '',
     }]
   };
-  constructor() { }
+  constructor(
+    private service: DietChatService,
+    @Inject(MAT_DIALOG_DATA)public data:any,
+    public dialogRef: MatDialogRef<DietChartFormComponent>
+    ) { }
 
   ngOnInit() {
+    console.log(this.data.userId, this.data.dietitianId);
+    
   }
   addDiet(){
     this.dietChatObject.diet_sub_chart.push({
@@ -51,5 +61,17 @@ export class DietChartFormComponent implements OnInit {
     });
     console.log(this.dietChatObject);
     
+  }
+  saveDietChat(){
+    this.service.getDietChat(this.dietChatObject).subscribe(
+      (success:any)=>{
+        console.log(success);
+      },(error)=>{
+        console.log(error);
+    })
+
+  }
+  close(){
+    this.dialogRef.close();
   }
 }

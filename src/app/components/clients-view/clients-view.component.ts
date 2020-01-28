@@ -19,6 +19,7 @@ import { DietChartFormComponent } from '../modal/diet-chart-form/diet-chart-form
 export class ClientsViewComponent implements OnInit {
   public userId: number;
   public Id: number;
+  public dietitianId: number;
   public userData: any;
   public userDetails: any;
   public found:any;
@@ -44,16 +45,15 @@ export class ClientsViewComponent implements OnInit {
   ngOnInit() {
     this.getParamaterData();
     // this.clientOtherDetails();
+    console.log(this.userId);
+    console.log(this.dietitianId);
+    
   }
   getParamaterData() {
-    // this.router.queryParams.subscribe(passData=>{
-    //   this.userId = passData['getUserId'];
-    //   console.log(this.userId);
-    // })
     this.router.params.subscribe(response => {
       this.userId = response["userId"];
       this.getClientData(response["userId"]);
-      
+      this.dietitianId = response["dietitian_id"]
     });
   }
   getClientData(userId) {
@@ -73,10 +73,11 @@ export class ClientsViewComponent implements OnInit {
 
     
   medicalAdd() {
-    this.myDialog.data = {userId: this.userId}
-    const dialogRef = this.dialog.open(MedicalHistoryComponent, this.myDialog);
-    console.log(this.myDialog);
-    
+    // this.myDialog.data = {userId: this.userId}
+    const dialogRef = this.dialog.open(MedicalHistoryComponent,{
+      width: '500px',
+      data: {userId: this.userId}
+    });    
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'success'){
         this.getClientData(this.userId);        
@@ -89,8 +90,10 @@ export class ClientsViewComponent implements OnInit {
       return element.id == id;
     });
     const dialogRef = this.dialog.open(MedicalHistoryComponent,{
-      data: {}
+      data : {fullData : found},
+      
     });
+    // console.log(found);
   }
   Delete(){
 
@@ -148,10 +151,8 @@ export class ClientsViewComponent implements OnInit {
   dietChat(){
     const dialogRef = this.dialog.open(DietChartFormComponent, {
       width: "1000px",
-      data: { userId: this.userId }
+      data: { userId: this.userId, dietitianId:  this.dietitianId}
     });
   }
-
-
 
 }

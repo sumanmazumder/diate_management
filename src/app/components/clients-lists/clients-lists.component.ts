@@ -30,6 +30,8 @@ export class ClientsListsComponent implements OnInit {
   getClintList() {
     this.clientService.getClientList().subscribe(
       (res: any) => {
+        console.log(res);
+        
         res.data.forEach((element, index) => {
           let name ="";
           this.sortedData.push(element.details);

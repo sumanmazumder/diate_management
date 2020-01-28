@@ -2,23 +2,37 @@
     <div mat-dialog-title text-center>
         <h3>Medical History</h3>
     </div>
-    <mat-dialog-content>
+    
         <form #medicalHistoryForm>
             <div class="col-md-12 form-group">
-                <input type="hidden" name="user_id" [value]="data.userId" class="form-control"/>
+                <input type="hidden" name="user_id" [value]="userData.details.user_id" class="form-control"/>
             </div>
             <div class="col-md-12 form-group">
-                <input type="text" name="title" class="form-control"/>
+                <input type="text" name="title" class="form-control" [(ngModel)]="userData.details.title"/>
             </div>
             <div class="col-md-12 form-group">
-                <textarea name="text" class="form-control"></textarea>
+                <textarea name="text" class="form-control" [(ngModel)]="userData.details.text"></textarea>
             </div>
             <div class="col-md-12 form-group">
                 <input type="file" name="doc" class="form-control"/>
             </div>
             <div>
-                <button (click)="medicalHistoryFromData()" class="submit">Submit</button>
+                <button (click)="submit()" class="submit">Submit</button>
             </div>
         </form>
-    </mat-dialog-content>
+
+        <!-- <div >
+            <div class="col-md-12 form-group">
+                <input type="text" name="title" class="form-control" [(ngModel)]="userData.details.title"/>
+            </div>
+            <div class="col-md-12 form-group">
+                <textarea name="text" class="form-control" [(ngModel)]="userData.details.text"></textarea>
+            </div>
+            <div class="col-md-12 form-group">
+                <input type="file" name="doc" class="form-control" #file />
+            </div>
+            <div>
+                <button (click)="submit()" class="submit">Submit</button>
+            </div>
+        </div> -->
 </div>

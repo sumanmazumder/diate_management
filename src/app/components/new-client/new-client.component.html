@@ -61,7 +61,7 @@
           <label>Alternate Number : </label>
           <input
           [appnospace]="'nospace'"
-          [appOnlyNumber]="'onlynumber'"
+          appOnlyNumber 
             type="text"
             class="form-control"
             placeholder="Alternate Phone / Whatapp"
@@ -93,7 +93,7 @@
             required
           />
         </div>
-        <div class="col-md-4 form-group">
+        <!-- <div class="col-md-4 form-group">
           <label>Client</label>
           <input
             type="text"
@@ -102,10 +102,8 @@
             name="types"
             placeholder="Client"
           />
-          <!-- <select name="type" class="typefield" [(ngModel)]="type" class="form-control">
-                          <option value="c">Client</option>
-                    </select> -->
-        </div>
+          
+        </div> -->
         <div class="col-md-4 form-group">
           <label>Pin Code :</label>
           <input
@@ -161,16 +159,7 @@
             required
           />
         </div>
-        <div class="col-md-4 form-group">
-          <label>Initial Observation</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Initial Observation"
-            name="initialObservation"
-            required
-          />
-        </div>
+        
         <!-- <div class="col-md-5 form-group">
           <label>Your Weight(kg):</label>
           <input
@@ -207,8 +196,40 @@
             required
           />
         </div>
-        
-        <div class="col-md-12 form-group">
+        <div class="col-md-4 form-group">
+          <label>Visceral Fat %</label>
+          <input
+            appOnlyNumber
+            type="text"
+            class="form-control"
+            placeholder="Visceral fat"
+            name="visceralFat"
+            [(ngModel)]="userData.details.visceralFat"
+            required
+          />
+        </div>
+        <div class="col-md-4 form-group">
+          <label>Body Fat %</label>
+          <input
+          appOnlyNumber
+            type="text"
+            class="form-control"
+            placeholder="Body Fat "
+            name="bodyFat"
+            [(ngModel)]="userData.details.bodyFat"
+            required
+          />
+        </div>
+        <div class="col-md-6 form-group">
+          <label>Initial Observation</label>
+          <textarea type="text"
+          class="form-control"
+          placeholder="Initial Observation"
+          name="initialObservation"
+          required></textarea>
+        </div>
+        <div class="col-md-6 form-group">
+          <label>Address:</label>
           <textarea
             class="form-control"
             placeholder="Address"
