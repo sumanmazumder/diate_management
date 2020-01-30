@@ -6,16 +6,13 @@
             </div>
         </div>
         <div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-4 form-group">
                     <input type="text" class="form-control" placeholder="First Name" name="first_name" [(ngModel)]="data.first_name" required>
                 </div>
                 <div class="col-md-4 form-group">
                     <input type="text" class="form-control" placeholder="last Name" name="last_name" [(ngModel)]="data.last_name" required>
                 </div>
-                <!-- <div class="col-md-4 form-group">
-                    <input type="email" class="form-control" placeholder="Email" name="" required>
-                </div> -->
                 <div class="col-md-4 form-group">
                     <input type="text" class="form-control" placeholder="Skype Id" name="skype_id" [(ngModel)]="data.skype_id" required>
                 </div>
@@ -33,8 +30,6 @@
                 </div>
                 <div class="col-md-4 form-group">
                     <select name="type" class="typefield" [(ngModel)]="data.user_type" class="form-control">
-                        <!-- <option disabled selected>Type</option>
-                        <option value="c">Client</option> -->
                         <option value="d" selected>Dietitian</option>
                     </select>
                 </div>
@@ -93,172 +88,282 @@
                 <div class="col-md-12 text-center">
                     <button (click)="newditationAdd()" class="btn">Save</button>
                 </div>
-            </div>
-
+            </div> -->
+            <div #firstForm>
+                <form class="row">
+                  <div class="col-md-4 form-group">
+                    <label for="">First Name: </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First Name"
+                      name="first_name"
+                      [(ngModel)]="userData.details.first_name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Last Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="last Name"
+                      name="last_name"
+                      [(ngModel)]="userData.details.last_name"
+                      required
+                    />
+                  </div>
+                  <!-- <div class="col-md-4 form-group">
+                              <input type="email" class="form-control" placeholder="Email" name="" required>
+                          </div> -->
+                  <div class="col-md-4 form-group">
+                    <label>Skype Id</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Skype Id"
+                      name="skype_id"
+                      [(ngModel)]="userData.details.skype_id"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Phone Number</label>
+                    <input
+                    [appnospace]="'nospace'"
+                    appOnlyNumber 
+                      type="text"
+                      class="form-control"
+                      placeholder="Phone"
+                      name="phone"
+                      [(ngModel)]="userData.details.phone"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Alternate Number : </label>
+                    <input
+                    [appnospace]="'nospace'"
+                    appOnlyNumber 
+                      type="text"
+                      class="form-control"
+                      placeholder="Alternate Phone / Whatapp"
+                      name="alt_phone"
+                      [(ngModel)]="userData.details.alt_phone"
+                      required
+                      
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="City"
+                      name="city"
+                      [(ngModel)]="userData.details.city"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Country</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Country"
+                      name="country"
+                      [(ngModel)]="userData.details.country"
+                      required
+                    />
+                  </div>
+                  <!-- <div class="col-md-4 form-group">
+                    <label>Client</label>
+                    <input
+                      type="text"
+                      disabled
+                      class="form-control"
+                      name="types"
+                      placeholder="Client"
+                    />
+                    
+                  </div> -->
+                  <div class="col-md-4 form-group">
+                    <label>Pin Code :</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Pin Code"
+                      name="pin"
+                      [(ngModel)]="userData.details.pin"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Email :</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="email"
+                      name="email"
+                      [(ngModel)]="userData.details.email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group" *ngIf="!isEdit">
+                    <label>Pasword :</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="password"
+                      name="password"
+                      [(ngModel)]="userData.details.password"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group" *ngIf="!isEdit">
+                    <label>Confirm Password :</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Confirm Password"
+                      name="c_password"
+                      [(ngModel)]="userData.details.c_password"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Date :</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      placeholder="Date of birth"
+                      name="dob"
+                      [(ngModel)]="userData.details.dob"
+                      required
+                    />
+                  </div>
+                  
+                  <!-- <div class="col-md-5 form-group">
+                    <label>Your Weight(kg):</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Weight"
+                      name="weight"
+                      [(ngModel)]="userData.details.weight"
+                      required
+                    />
+                  </div> -->
+                  <!-- <div class="col-md-5 form-group">
+                    <label>Your Height(cm)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Height"
+                      name="height"
+                      [(ngModel)]="userData.details.height"
+                      required
+                    />
+                  </div> -->
+                  
+                  <div class="col-md-4 form-group">
+                    <!-- <a (click)="bmis()">Get bmi</a> -->
+                    <!-- <p>{{bmis}}</p> -->
+                    <label>Bmi</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Bmi"
+                      name="bmi"
+                      [(ngModel)]="userData.details.bmi"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Visceral Fat %</label>
+                    <input
+                      appOnlyNumber
+                      type="text"
+                      class="form-control"
+                      placeholder="Visceral fat"
+                      name="visceralFat"
+                      [(ngModel)]="userData.details.visceralFat"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label>Body Fat %</label>
+                    <input
+                    appOnlyNumber
+                      type="text"
+                      class="form-control"
+                      placeholder="Body Fat "
+                      name="bodyFat"
+                      [(ngModel)]="userData.details.bodyFat"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label>Initial Observation</label>
+                    <textarea type="text"
+                    class="form-control"
+                    placeholder="Initial Observation"
+                    name="initialObservation"
+                    required></textarea>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label>Address:</label>
+                    <textarea
+                      class="form-control"
+                      placeholder="Address"
+                      name="address"
+                      [(ngModel)]="userData.details.address"
+                      required
+                    ></textarea>
+                  </div>
+          
+                  <div class="col-md-12">
+                    <h3>SPOUSE</h3>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" placeholder="First Name" />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" placeholder="Last Name" />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class="row">
+                      <div class="col-md-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Anniversary"
+                        />
+                      </div>
+                      <div class="col-md-2">
+                        <label for=""
+                          ><img src="./assets/images/date-icon.svg" alt=""
+                        /></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <h3>Source</h3>
+                    <select name="assign" class="form-control">
+                        <option [value]="source" *ngFor="let source of sourceData">{{
+                          source
+                        }}</option>
+                      </select>
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <button (click)="save()" class="btn">Save</button>
+                  </div>
+                </form>
+              </div>
         </div>
         <div *ngIf="secondForm">
             <app-other-client-details [userId]="userId"></app-other-client-details>
         </div>
-        <!-- <div class="row">
-            <div class="col-md-4">
-                <div class="medical_history">
-                    <div class="heading">
-                        <h3>Qualification</h3>
-                        <img src="./assets/images/add-icon.svg" alt="">
-                    </div>
-                    <form action="">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Title">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="" id="" class="form-control" placeholder="Text"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input id="singleFile" type="file" [fileUploadInputFor]="fileUploadQueue" />
-                            <label for=""><img src="./assets/images/pdf-icon.svg" alt=""></label>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="medical_history">
-                    <div class="heading">
-                        <h3>Spouse</h3>
-                        <mat-slide-toggle></mat-slide-toggle>
-                    </div>
-                    <form action="">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last Name">
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" placeholder="Anniversary">
-                                </div>
-                                <div class="col-md-2">
-                                    <label for=""><img src="./assets/images/date-icon.svg" alt=""></label>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="medical_history">
-                    <div class="heading">
-                        <h3>Kids</h3>
-                        <mat-slide-toggle></mat-slide-toggle>
-                    </div>
-                    <form action="">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last Name">
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" placeholder="Date of Birth">
-                                </div>
-                                <div class="col-md-2">
-                                    <label for=""><img src="./assets/images/date-icon.svg" alt=""></label>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="medical_history">
-                    <div class="heading">
-                        <h3>Rates</h3>
-                        <img src="./assets/images/add-icon.svg" alt="">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="item">
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="$$">
-                        </div>
-                        <div class="col-md-8">
-                            <mat-form-field>
-                                <mat-select [(value)]="selected">
-                                    <mat-option>None</mat-option>
-                                    <mat-option value="option1" selected>Option 1</mat-option>
-                                    <mat-option value="option2">Option 2</mat-option>
-                                    <mat-option value="option3">Option 3</mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input id="singleFile" type="file" [fileUploadInputFor]="fileUploadQueue" />
-                        <label for=""><img src="./assets/images/pdf-icon.svg" alt=""></label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="medical_history">
-                    <div class="heading">
-                        <h3>Notes</h3>
-                        <img src="./assets/images/add-icon.svg" alt="">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Title">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="" id="" class="form-control" placeholder="Text"></textarea>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="medical_history">
-                    <div class="heading">
-                        <h3>Referral / Source</h3>
-                    </div>
-                    <div class="form-group">
-                        <mat-form-field>
-                            <mat-select [(value)]="selected">
-                                <mat-option>None</mat-option>
-                                <mat-option value="option1" selected>Option 1</mat-option>
-                                <mat-option value="option2">Option 2</mat-option>
-                                <mat-option value="option3">Option 3</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div class="heading">
-                        <h3>Assign / Permission</h3>
-                    </div>
-                    <div class="form-group">
-                        <mat-form-field>
-                            <mat-select [(value)]="selected">
-                                <mat-option>None</mat-option>
-                                <mat-option value="option1" selected>Option 1</mat-option>
-                                <mat-option value="option2">Option 2</mat-option>
-                                <mat-option value="option3">Option 3</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-12 text-center save">
-                <input type="submit" value="Save">
-            </div>
-        </div> -->
+        
     </div>
 </div>

@@ -1,35 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { NewClientService } from "src/app/services/new-client.service";
 import { SnakBarService } from "src/app/services/snak-bar.service";
-export interface newDitiationInterface {
-  first_name?: string;
-  last_name?: string;
-  skype_id?: string;
-  phone?: number;
-  alt_phone?: number;
-  city?: string;
-  country?: string;
-  address?: string;
-  pin?: string;
-  sp_first_name?: string;
-  sp_last_name?: string;
-  sp_anniversary?: string;
-  user_type?: string;
-  email?: string;
-  c_password?: string;
-  password?: string;
-}
+import { DietitionsListService } from 'src/app/services/dietitions-list.service';
+export interface newDitiationInterface {}
 @Component({
   selector: "app-new-dietitian",
   templateUrl: "./new-dietitian.component.html",
   styleUrls: ["./new-dietitian.component.scss"]
 })
 export class NewDietitianComponent implements OnInit {
+  public userData:any = {details:{user_type: "d"}};
   public firstForm: boolean = true;
   public secondForm: boolean = false;
-  public userId: number;
-  public data: newDitiationInterface = {};
-  public userType:any = 'c';
+  public userId: string;
+  public isEdit:boolean = false;
+  public title:string = 'Add New Client';
   public sourceData = [
     "Social Media",
     "Google",
@@ -38,24 +23,70 @@ export class NewDietitianComponent implements OnInit {
     "Website",
     "Other"
   ];
+  public dietititionList = [];
   constructor(
     private newservice: NewClientService,
-    private snackbarService: SnakBarService
+    private snackbarService: SnakBarService,
+    private service: DietitionsListService
   ) {}
 
   ngOnInit() {}
-  newditationAdd() {
-    console.log(this.newclientFormData());
-    if(!Object.keys(this.newclientFormData()).length){
-      return this.snackbarService.openSnackBar('Fill the Form');
-    }
+
+  getDietititionList(){
+    this.service.getdietitionsList().subscribe(
+      (success:any)=>{
+        console.log(success['data']);
+        success.data.forEach(element => {
+          this.dietititionList.push(element.details);
+        });
+      }
+    )
+  }
+  getClientData(userId){
+    this.newservice.getUserData(userId).subscribe(
+      (success:any)=>{
+        console.log(success);
+        this.userData = success.data;
+        this.secondForm = true;
+      },
+      (error:any)=>{
+        console.log(error);
+
+      }
+    )
+  }
+  save(){
+    alert("after save");
+    this.userId ? this.updateClient() : this.newclientAdd();
+  }
+  // updateClient() {
+  //   console.log(this.newclientFormData());
+  //   if(!Object.keys(this.newclientFormData()).length){
+  //     return this.snackbarService.openSnackBar('Fill the Form');
+  //   }
+  //   this.newservice.addClient(this.newclientFormData()).subscribe(
+  //     (success: any) => {
+  //       console.log(success);
+  //       this.firstForm = false;
+  //       this.secondForm = true;
+  //       this.userId = success.data["user"].id;
+  //       this.snackbarService.openSnackBar('Successfully Saved');
+  //       console.log(this.userId);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
+  newclientAdd(){
+    alert("client update");
+    console.log(this.userData.details);
     this.newservice.addClient(this.newclientFormData()).subscribe(
       (success: any) => {
         console.log(success);
         this.firstForm = false;
         this.secondForm = true;
         this.userId = success.data["user"].id;
-        this.snackbarService.openSnackBar('Successfully Saved');
         console.log(this.userId);
       },
       error => {
@@ -63,9 +94,10 @@ export class NewDietitianComponent implements OnInit {
       }
     );
   }
+  updateClient(){}
   newclientFormData() {
-    this.data.user_type='d';
-    return this.data;
+    return this.userData.details;
+    
   }
 
 }

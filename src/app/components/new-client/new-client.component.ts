@@ -145,7 +145,6 @@ export class NewClientComponent implements OnInit {
   }
 
   newclientFormData() {
-    
     return this.userData.details;
   }
   
