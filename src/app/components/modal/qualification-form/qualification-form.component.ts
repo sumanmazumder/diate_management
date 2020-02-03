@@ -30,7 +30,7 @@ export class QualificationFormComponent implements OnInit {
   qualificationSubmit(){
     this.qualyServices.qualificationData(this.getFromData()).subscribe(
       (user:any)=>{
-        console.log(user);
+        // console.log(user);
         this.closeDialog('success');
       },
       (error)=>{
@@ -50,7 +50,7 @@ export class QualificationFormComponent implements OnInit {
   
   public image: any;
   readURL(input) {
-    console.log(input);
+    // console.log(input);
     
     if (input.files && input.files[0]) {
         let reader = new FileReader();

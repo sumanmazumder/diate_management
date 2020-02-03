@@ -36,6 +36,7 @@ import { SidebarComponent } from './views/partials/sidebar/sidebar.component';
 import { NewClientComponent } from './components/new-client/new-client.component';
 import { NewDietitianComponent } from './components/new-dietitian/new-dietitian.component';
 import { AllDetailsComponent } from './components/all-details/all-details.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { TasksComponent } from './components/modal/tasks/tasks.component';
 import { IssuesComponent } from './components/modal/issues/issues.component';
@@ -63,6 +64,7 @@ import { IssueListComponent } from './components/issue-list/issue-list.component
 import { DietitianListComponent } from './components/dietitian-list/dietitian-list.component';
 import { DietChartFormComponent } from './components/modal/diet-chart-form/diet-chart-form.component';
 import { MaxLengthPipe } from './pipe/max-length.pipe';
+import { MaxLengthDirective } from './directive/max-length.directive';
 
 
 @NgModule({
@@ -100,6 +102,7 @@ import { MaxLengthPipe } from './pipe/max-length.pipe';
     DietitianListComponent,
     DietChartFormComponent,
     MaxLengthPipe,
+    MaxLengthDirective,
     
   ],
   imports: [
@@ -119,6 +122,7 @@ import { MaxLengthPipe } from './pipe/max-length.pipe';
     Ng2SearchPipeModule,
     MatMenuModule,
     MatSortModule,
+    MatRadioModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],

@@ -22,4 +22,16 @@ export class QualificationService {
     // console.log(url);
     return this.http.get(url);
   }
+
+  // deleteQualification(UserQualification:any, userId){
+  //   const url = this.apiService.getUrl(`UserQualification/${userId}`);
+  //   UserQualification._method= 'DELETE';
+  //   return this.http.post(url, userId);
+  // }
+
+  deleteQualification(UserQualification:any, userId){
+    const url = this.apiService.getUrl(`UserQualification/${userId}`);
+    UserQualification._method= 'DELETE';
+    return this.http.get(url);
+  }
 }

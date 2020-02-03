@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-12 col-12">
         <div class="medical_history">
             <mat-accordion>
                 <mat-expansion-panel>
@@ -10,20 +10,21 @@
                             </a> Qualification</h3>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="accordian_details" *ngFor="let qualy of otherDetails.qualification">
+                    <div class="accordian_details medical_history_details" *ngFor="let qualy of otherDetails.qualification">
                         <h3>{{qualy.title}}</h3>
                         <p>{{qualy.text}}</p>
                         <div class="img">
                             <img [src]="qualy.doc" class="img-fluid"/>
                         </div>
+                        <a (click)="QualificationDel(qualy.id)">Delete</a>
                     </div>
                 </mat-expansion-panel>
                 
             </mat-accordion>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="medical_history">
+    <div class="col-lg-6 col-md-12">
+        <div class="medical_history kids">
             <mat-accordion>
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
@@ -34,9 +35,9 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="accordian_details kids_details" *ngFor="let kids of otherDetails.kids">
-                        <p>First Name: <b>{{kids.first_name}}</b></p>
-                        <p>Last Name: <b>{{kids.last_name}}</b></p>
-                        <p>Date Of Birth: <b>{{kids.dob}}</b></p>
+                        <p>First Name: <br><b>{{kids.first_name}}</b></p>
+                        <p>Last Name: <br><b>{{kids.last_name}}</b></p>
+                        <p>Date Of Birth: <br><b>{{kids.dob}}</b></p>
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
@@ -45,7 +46,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-12 col-12">
         <div class="rates_history">
             <mat-accordion>
                 <mat-expansion-panel>
@@ -65,7 +66,7 @@
             </mat-accordion>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-12 col-12">
         <div class="notes_history">
             <mat-accordion>
                 <mat-expansion-panel>

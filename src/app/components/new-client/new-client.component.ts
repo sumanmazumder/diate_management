@@ -46,22 +46,6 @@ export class NewClientComponent implements OnInit {
 
   public dietititionList = [];
 
-  // public first_name: string;
-  // public last_name: string;
-  // public skype_id: string;
-  // public phone: number;
-  // public alt_phone: number;
-  // public city: string;
-  // public country: string;
-  // public address: string;
-  // public pin: string;
-  // public email: string;
-  // public password: string;
-  // public c_password: string;
-  // public weight: string;
-  // public height: string;
-  // public dob:string;
-
   @ViewChild("newClient", { static: true }) newClientData: ElementRef;
   constructor(
     public dialog: MatDialog,
@@ -72,16 +56,13 @@ export class NewClientComponent implements OnInit {
 
   ngOnInit() {
     // this.userId = 21;
-    // console.log(this.newclientSubmit())
-
     this.getparamData();
     this.getDietititionList();
-    console.log(this.newclientFormData());
     
   }
   getparamData(){
     this.router.params.subscribe(response=>{
-      console.log(response['userId']);
+      // console.log(response['userId']);
       if(response['userId']){
         this.userId = response['userId'];
         this.isEdit = true;
@@ -96,7 +77,7 @@ export class NewClientComponent implements OnInit {
   getDietititionList(){
     this.service.getdietitionsList().subscribe(
       (success:any)=>{
-        console.log(success['data']);
+        // console.log(success['data']);
         success.data.forEach(element => {
           this.dietititionList.push(element.details);
         });
@@ -107,7 +88,7 @@ export class NewClientComponent implements OnInit {
   getClientData(userId){
     this.newClientService.getUserData(userId).subscribe(
       (success:any)=>{
-        console.log(success);
+        
         this.userData = success.data;
         this.secondForm = true;
       },
@@ -123,6 +104,7 @@ export class NewClientComponent implements OnInit {
   updateClient(){
     this.newClientService.updateClient(this.newclientFormData(), this.userId).subscribe(
       (success:any)=>{
+        
         console.log(success);
       },(error)=>{
         console.log(error);
@@ -130,13 +112,14 @@ export class NewClientComponent implements OnInit {
     )
   }
   newclientAdd() {
+    console.log(this.newclientFormData());
+    
     this.newClientService.addClient(this.newclientFormData()).subscribe(
       (success: any) => {
         console.log(success);
         this.firstForm = false;
         this.secondForm = true;
         this.userId = success.data["user"].id;
-        console.log(this.userId);
       },
       error => {
         console.log(error);
@@ -147,17 +130,4 @@ export class NewClientComponent implements OnInit {
   newclientFormData() {
     return this.userData.details;
   }
-  
-  
-//  public get bmis(){
-//     if(this.userData.details.weight && this.userData.details.height){
-//       console.log("data");
-//       if(this.userData.details.weight > 0 && this.userData.details.height>0){
-//         this.userData.details.bmi = this.userData.details.weight/(this.userData.details.height/100*this.userData.details.height/100);
-//         console.log(this.userData.details.bmi);
-//         return this.userData.details.bmi
-//       }
-//     }
-//     return ""
-//   }
 }

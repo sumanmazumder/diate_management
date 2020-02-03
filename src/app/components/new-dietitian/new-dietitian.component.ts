@@ -11,7 +11,7 @@ export interface newDitiationInterface {}
 export class NewDietitianComponent implements OnInit {
   public userData:any = {details:{user_type: "d"}};
   public firstForm: boolean = true;
-  public secondForm: boolean = false;
+  public secondForm: boolean = true;
   public userId: string;
   public isEdit:boolean = false;
   public title:string = 'Add New Client';

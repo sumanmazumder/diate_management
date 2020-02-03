@@ -8,7 +8,7 @@ export class ProgressService {
 
   constructor(private apiService: ApiService, private http: HttpClient) { }
   progress(data:any){
-    const url = this.apiService.getUrl("UserMedHistory");
+    const url = this.apiService.getUrl("UserProgress");
     return this.http.post(url, data);
   }
 }

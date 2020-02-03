@@ -58,6 +58,8 @@ export class ClientsViewComponent implements OnInit {
   }
   getClientData(userId) {
     this.newClientService.getUserData(userId).subscribe((success: any) => {
+      console.log(success);
+      
       this.userData = success["data"];
       this.userDetails=success["data"].details;
       this.userData.medhistory.forEach(element => {

@@ -14,7 +14,7 @@
     }
 }
 .medical_history{
-    margin-top: 40px;
+    margin: 40px 0px;
     
 }
 .heading{
@@ -49,4 +49,15 @@
 .kids_details{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+.medical_history_details{
+    h3{
+        width: 100%;
+        float: left;
+    }
+    p{
+        width: 100%;
+        float: right;
+    }
 }

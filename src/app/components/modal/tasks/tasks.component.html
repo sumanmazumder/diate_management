@@ -3,19 +3,36 @@
         <h3>Tacks</h3>
     </div>
     <mat-dialog-content>
-        <form #tacksForm>
+        <!-- <form #tacksForm> -->
             <div class="form-group">
                 <input type="hidden" placeholder="Items" class="form-control" name="user_id" [value]="data.userId" required/>
             </div>
             <div class="col-md-12 form-group">
-                <input type="text" name="title" class="form-control"/>
+                <input type="text" name="title" class="form-control" [(ngModel)]="userTask.details.title"/>
             </div>
             <div class="col-md-12 form-group">
-                <textarea name="text" class="form-control"></textarea>
+                <textarea name="task" class="form-control" [(ngModel)]="userTask.details.task"></textarea>
+            </div>
+            <div class="col-md-12 form-group">
+                <div *ngFor="let item of subTask">
+                    <input name="sub_task" class="form-control" [value]="" [(ngModel)]="item.sub_task">
+                </div>
+                <a (click)="addSubtask()">Add</a>
+            </div>
+            <div class="col-md-12 form-group">
+            <mat-radio-group aria-label="Select an option" name="assign_user_id" [(ngModel)]="userTask.details.assign_user_id">
+                <mat-radio-button value="self">Self</mat-radio-button>
+                <mat-radio-button value="dietitian">Dietitian</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="col-md-12 form-group">
+                <select [(ngModel)]="userTask.details.priority" class="form-control">
+                    <option [value]="item" *ngFor="let item of priority">{{item}}</option>
+                </select>
             </div>
             <div>
                 <button (click)="tacksFromData()" class="submit">Submit</button>
             </div>
-        </form>
+        <!-- </form> -->
     </mat-dialog-content>
 </div>
